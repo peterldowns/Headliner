@@ -1,0 +1,125 @@
+html {
+	overflow: auto; /* Allow custom scrollbar */
+	
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	font-size: 25px;
+}
+.bg_image {
+	background: url(paper.jpg) no-repeat fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* Fill the page with a body, allowing a custom scrollbar */
+body {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	padding: 10px;
+	overflow-x: auto;
+	overflow-y: hidden; /* Don't scroll y, only x */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  {
+	display: none;
+	height: 30px;
+	display: block;
+	background-color: transparent;
+}
+::-webkit-scrollbar-track-piece  {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+	width: auto;
+	background-color: rgba(0,0,0,0.3);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* This is the main div that holds all of our article headlines */
+#content, #text {
+	padding: 10px;
+	height: 100%; /* Fill the screen */
+	width: auto;
+}
+#text {
+	border-radius: 10px;
+	color: #000;
+	font-size: 20px;
+	font-family: "Times New Roman", "Times", serif;
+}
+
+/* Every article is kept inside a .article div. */
+.article {
+	background-color:rgba(256,256,256,0);
+	color: #555;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	-webkit-transition-property: color, background; 
+	-webkit-transition-duration: .5s, .5s; 
+	-webkit-transition-timing-function: linear, ease-in;
+}
+
+/* Style how the source and pub date looks for each article */
+.article .source {
+	font-size: 12px;
+	font-style: italic;
+	/* text-decoration: underline; */
+}
+.article .tags {
+	font-size: 10px;
+	text-decoration: underline;
+}
+
+.article:hover {
+	background-color:rgba(256,256,256,.5);
+	color: #000;
+}
+
+.columns {
+	-webkit-columns: 262px auto;
+	columns: 262px auto;
+
+	-moz-column-gap:1em;
+	-webkit-column-gap:1em;
+	column-gap:1em;
+	/*
+	-moz-column-rule-color #555;
+	-webkit-column-rule-color #555;
+	column-rule-color #555;
+
+	-moz-column-rule-width:1px;
+	-webkit-column-rule-width:1px;
+	column-rule-width:1px;
+
+	-moz-column-rule-style:solid;
+	-webkit-column-rule-style:solid;
+	column-rule-style:solid:
+	*/
+}
+
+a {
+	text-decoration: underline;
+	color: #888;
+}
+a:hover {
+	color: #AAA;
+}
+
