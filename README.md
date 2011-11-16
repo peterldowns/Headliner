@@ -9,6 +9,7 @@ It works pretty well, but some improvements need to be made.
 
 ##Todo:##
 
+* Fetch sources at interval in the background using a worker program
 * Add more sources (only NYT and AP right now)
 * Make a better reading interface (double click to close stinks)
 * Add user authentication (let people other than me use it?)
