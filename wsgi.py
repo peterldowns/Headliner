@@ -4,14 +4,14 @@ from bottle import route, request, view, static_file, default_app # web framewor
 
 class static_files():
 	# serves any static files
-	@route('/static/<path:path>')
+	@route('/static/:path#.+#')
 	def serve(path):
 		return static_file(path, root='./static')
 
 class index():
 	# serves the main page
-	@route('/')
-	@route('/<tags>')
+	@route('/', 'GET')
+	@route('/:tags', 'GET')
 	@view('index')
 	def get(tags=None):
 		# load the articles from a shelf
@@ -35,7 +35,6 @@ class index():
 		if not tags:
 			out = articles
 		else:
-			print "filtering tags"
 			tags = filter(lambda x: len(x), tags.lower().split(','))
 			for a in articles:
 				tagstr = " ".join(a.tags)
@@ -52,28 +51,23 @@ class index():
 					out.append(a)
 		return dict(articles=out)
 	
-	@route('/viewtext')
+	@route('/viewtext', 'GET')
 	def viewtext():
-		# expects /viewtext?url=
 		url = request.GET.get('url', "ERROR, please try a different link")
-		title, url, body, debug = news.viewtext(url)
+		title, url, body = news.viewtext(url)
 		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
-		#dbg = "<br><p>bottle request url: %s</p><br>" % url
-		#return header+body+debug+dbg
 		return header+body
 
-	@route('/diffbot')
+	@route("/diffbot", 'GET')
 	def diffbot():
-		# expects /diffbot?url=
 		url = request.GET.get('url', "ERROR, please try a different link")
 		title, url, text = news.diffbot(url)
 		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
 		body = news.htmlFromText(text)
 		return header+body
 	
-	@route('/boilerpipe')
+	@route("/boilerpipe/", 'GET')
 	def boilerpipe():
-		# expects /boilerpipe?url=
 		url = request.GET.get('url', "ERROR, please try a different link")
 		title, url, text = news.boilerpipe(url)
 		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
@@ -83,4 +77,4 @@ class index():
 application = default_app()
 from bottle import debug, run
 debug(True)
-#run(host='localhost', port=8080)
+run(host='localhost', port=8080)

@@ -80,9 +80,10 @@ def viewtext(url):
 	#url = data.get("responseUrl")
 	content = data.get("content")
 	title = data.get("title")
-	debug = "<br>DEBUG<br>Url: %s<br>Request: %s<br>Response: %s<br>Data: %s"
-	debug = debug % (str(url), str(req_string), str(resp), str(data))
-	return (title, url, content, debug)
+	return (title, url, content)
+	#debug = "<br>DEBUG<br>Url: %s<br>Request: %s<br>Response: %s<br>Data: %s"
+	#debug = debug % (str(url), str(req_string), str(resp), str(data))
+	#return (title, url, content, debug)
 	
 class Article:
 	def __init__(self, url, source, pub_date, tags, title=None):
