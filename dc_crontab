@@ -1,3 +1,3 @@
 # custom crontab for dotcloud services
 # runs the python news fetcher service in the background
-0-59/15 * * * * python fetcher.py db.shlv
+0-59/30 * * * * python fetcher.py

@@ -1,2 +1,8 @@
 #!/bin/sh
+chmod +x dc_crontab fetcher.py
+echo "post: chmodded"
 crontab dc_crontab
+echo "post: crontabbed"
+python fetcher.py
+echo "post: fetched"
+echo "post: DONE"
