@@ -26,7 +26,6 @@ def main():
 		if not db.has_key('articles'):
 			db['articles'] = []
 		out = db['articles']
-		print out
 	except:
 		if db:
 			db.close()
@@ -41,8 +40,10 @@ def main():
 			added += 1
 			out.append(a)
 	db['articles']	= out
-	print >> sys.stderr, "len(db['articles']) = %d" % len(out)
-	print >> sys.stderr, "... added %d new articles" % added
+
+	
+	cur_time = time.asctime(time.localtime(time.time()))
+	print >> sys.stderr, "@ %s: num_articles=%d, new=%d" % (cur_time, len(out), added)
 	db.close()
 	sys.exit(0)
 
