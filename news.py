@@ -1,4 +1,5 @@
 import requests # fetch articles
+import urllib # escape requests
 import json # parse result
 import BeautifulSoup, re # html cleaning
 
@@ -41,7 +42,7 @@ def htmlFromText(text):
 """ TEXT/HTML EXTRACTORS """
 def boilerpipe(url):
 	format = "json"
-	extractor_address = "http://boilerpipe-web.appspot.com/extract?url=%s&output=%s&mode=default" % (url, format)
+	extractor_address = "http://boilerpipe-web.appspot.com/extract?url=%s&output=%s&mode=default" % (urllib.quote(url), format)
 	
 	resp = requests.get(extractor_address)
 	data = json.loads(resp.content)["response"]
@@ -56,7 +57,7 @@ def diffbot(url):
 	""" use the diffbot.com api to extract article text """
 	token = "b674b393db9437307b5f9807ddbc7d27"
 	format = "json" # by default, but specified for readability
-	extractor_address = "http://www.diffbot.com/api/article?token=%s&url=%s&format=%s" % (token, url, format)
+	extractor_address = "http://www.diffbot.com/api/article?token=%s&url=%s&format=%s" % (token, urllib.quote(url), format)
 	
 	resp = requests.get(extractor_address)
 	data = json.loads(resp.content)
@@ -71,16 +72,17 @@ def viewtext(url):
 	""" Use viewtext.org's API to extract the HTML from an article """
 	viewtext = "http://viewtext.org/api/text?url=%s&format=%s"
 	format = "json"
-	req_string = viewtext % (url, format)
-	
+	req_string = viewtext % (urllib.quote(url), format)
+	print "requesting to %s" % req_string
 	resp = requests.get(req_string)
+	print "resp.status_code = %d" % resp.status_code
+	print "resp.content =", resp.content
 	data = json.loads(resp.content)
 	
 	#print json.dumps(data, sort_keys=True, indent=4)
 	url = data["responseUrl"]
 	content = data["content"]
 	title = data["title"]
-	print 'woopee!...'
 	return (title, url, content)
 	
 class Article:
