@@ -10,6 +10,11 @@ class static_files():
 
 class index():
 	# serves the main page
+	@route('/favicon.ico', 'GET')
+	def favicon():
+		print 'got the request'
+		return static_file('favicon.ico', root='./static')
+
 	@route('/', 'GET')
 	@route('/:tags', 'GET')
 	@view('index')
@@ -28,9 +33,6 @@ class index():
 		articles = articles[:-40:-1] # TODO: sort articles by pub date
 		# TODO: this *does* do fetch order .... more or less date?
 
-		if tags == 'favicon.ico':
-			tags = None
-		
 		out = []
 		if not tags:
 			out = articles
