@@ -5,12 +5,15 @@ html {
 	font-weight: 300;
 	font-size: 25px;
 }
-.bg_image {
+.bg_main {
 	background: url(paper.jpg) no-repeat fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+.bg_reader {
+	background: url(grain.jpg) repeat 0 0;
 }
 
 /* Fill the page with a body, allowing a custom scrollbar */
@@ -89,8 +92,9 @@ body {
 }
 
 .article:hover {
-	background-color:rgba(256,256,256,.5);
+	background-color:rgba(256,256,256,.7);
 	color: #000;
+	color: #6090CF;
 }
 
 .columns {
@@ -116,10 +120,9 @@ body {
 }
 
 a {
-	text-decoration: underline;
-	color: #888;
+	text-decoration: none;
+	color: #000;
 }
 a:hover {
-	color: #AAA;
+	color: #6090CF;
 }
-
