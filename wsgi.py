@@ -1,8 +1,6 @@
 import news # get the news
 import shelve # load articles
-from bottle import debug, run, template, route, request, view, static_file, default_app # run a web app
-
-debug(True)
+from bottle import route, request, view, static_file, default_app # web framework
 
 class static_files():
 	# serves any static files
@@ -75,4 +73,6 @@ class index():
 		return header+body
 
 application = default_app()
-run(host='localhost', port=8080)
+#from bottle import debug, run
+#debug(True)
+#run(host='localhost', port=8080)
