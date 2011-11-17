@@ -3,17 +3,14 @@ import time
 import signal
 import shelve
 import news
-"""
 # SIGINT handler
+
 def sigterm_handler(signum, frame):
 	cur_time = time.asctime(time.localtime(time.time()))
 	print >> sys.stderr, "Interrupted at %s" % cur_time
 	sys.exit(0)
 
 
-# Bind our handler to SIGINT
-signal.signal(signal.SIGTERM, sigterm_handler)
-"""
 def main():
 	#cur_time = time.asctime(time.localtime(time.time()))
 	#print >> sys.stderr, "Program was run at %s" % cur_time
@@ -45,7 +42,15 @@ def main():
 	cur_time = time.asctime(time.localtime(time.time()))
 	print >> sys.stderr, "@ %s: num_articles=%d, new=%d" % (cur_time, len(out), added)
 	db.close()
-	sys.exit(0)
+	return
 
+def do():
+	while True:
+		main()
+		time.sleep(60)
+
+
+# Bind our handler to SIGINT
+signal.signal(signal.SIGTERM, sigterm_handler)
 # Run the main program
-main()
+do()
