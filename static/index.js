@@ -25,7 +25,7 @@ $(document).ready(function(){
 			bg_off();
 			$("#text").fadeIn("slow");
 			var url = $(this).attr('url');
-			var a = "/viewtext/"+url;
+			var a = "/viewtext?url="+url;
 			console.log("request to "+a);
 			$.get(a, function(data){
 				$("#text").html(data);

@@ -71,19 +71,18 @@ def diffbot(url):
 def viewtext(url):
 	""" Use viewtext.org's API to extract the HTML from an article """
 	viewtext = "http://viewtext.org/api/text?url=%s&format=%s"
-	format = "json"
-	req_string = viewtext % (urllib.quote(url), format)
-	#print "requesting to %s" % req_string
+	form = "json"
+	req_string = viewtext % (urllib.quote(url), form)
 	resp = requests.get(req_string)
-	#print "resp.status_code = %d" % resp.status_code
-	#print "resp.content =", resp.content
 	data = json.loads(resp.content)
 	
 	#print json.dumps(data, sort_keys=True, indent=4)
-	url = data["responseUrl"]
-	content = data["content"]
-	title = data["title"]
-	return (title, url, content)
+	#url = data.get("responseUrl")
+	content = data.get("content")
+	title = data.get("title")
+	debug = "<br>DEBUG<br>Url: %s<br>Request: %s<br>Response: %s<br>Data: %s"
+	debug = debug % (str(url), str(req_string), str(resp), str(data))
+	return (title, url, content, debug)
 	
 class Article:
 	def __init__(self, url, source, pub_date, tags, title=None):

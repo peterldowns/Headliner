@@ -4,14 +4,14 @@ from bottle import route, request, view, static_file, default_app # web framewor
 
 class static_files():
 	# serves any static files
-	@route('/static/:path#.+#')
+	@route('/static/<path:path>')
 	def serve(path):
 		return static_file(path, root='./static')
 
 class index():
 	# serves the main page
-	@route('/', 'GET')
-	@route('/:tags', 'GET')
+	@route('/')
+	@route('/<tags>')
 	@view('index')
 	def get(tags=None):
 		# load the articles from a shelf
@@ -25,7 +25,7 @@ class index():
 			articles = [news.Article("error", "error", "error", "error", "error")]
 
 		# limit the number of articles to 25
-		articles = articles[:-25:-1] # TODO: sort articles by pub date
+		articles = articles[:-40:-1] # TODO: sort articles by pub date
 		# TODO: this *does* do fetch order .... more or less date?
 
 		if tags == 'favicon.ico':
@@ -52,30 +52,35 @@ class index():
 					out.append(a)
 		return dict(articles=out)
 	
-	@route('/viewtext/:url#.+#', 'GET')
-	def viewtext(url):
-		title, url, body = news.viewtext(url)
-		print "Title: %s" % title
-		print "Url: %s" % url
-		print "Body: %s" % body
+	@route('/viewtext')
+	def viewtext():
+		# expects /viewtext?url=
+		url = request.GET.get('url', "ERROR, please try a different link")
+		title, url, body, debug = news.viewtext(url)
 		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
+		#dbg = "<br><p>bottle request url: %s</p><br>" % url
+		#return header+body+debug+dbg
 		return header+body
 
-	@route("/diffbot/:url#.+#", 'GET')
-	def diffbot(url):
+	@route('/diffbot')
+	def diffbot():
+		# expects /diffbot?url=
+		url = request.GET.get('url', "ERROR, please try a different link")
 		title, url, text = news.diffbot(url)
 		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
 		body = news.htmlFromText(text)
 		return header+body
 	
-	@route("/boilerpipe/:url#.+#", 'GET')
-	def boilerpipe(url):
+	@route('/boilerpipe')
+	def boilerpipe():
+		# expects /boilerpipe?url=
+		url = request.GET.get('url', "ERROR, please try a different link")
 		title, url, text = news.boilerpipe(url)
 		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
 		body = news.htmlFromText(text)
 		return header+body
 
 application = default_app()
-#from bottle import debug, run
-#debug(True)
+from bottle import debug, run
+debug(True)
 #run(host='localhost', port=8080)
