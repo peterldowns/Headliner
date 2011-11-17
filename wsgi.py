@@ -27,7 +27,8 @@ class index():
 			articles = [news.Article("error", "error", "error", "error", "error")]
 
 		# limit the number of articles to 25
-		articles = articles[-25:] # TODO: sort articles by pub date
+		articles = articles[:-25:-1] # TODO: sort articles by pub date
+		# TODO: this *does* do fetch order .... more or less date?
 
 		if tags == 'favicon.ico':
 			tags = None
