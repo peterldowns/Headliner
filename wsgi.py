@@ -57,7 +57,13 @@ class index():
 	def viewtext():
 		url = request.GET.get('url', "ERROR, please try a different link")
 		title, url, body = news.viewtext(url)
-		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
+		header = "<div class=\"headline\">"\
+				 "<h1>"\
+				 "<a href=\"%s\">%s</a>"\
+				 "</h1>"\
+				 "</div>" % (url, title)
+
+		#header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
 		return header+body
 
 	@route("/diffbot", 'GET')
@@ -77,6 +83,6 @@ class index():
 		return header+body
 
 application = default_app()
-from bottle import debug, run
-debug(True)
-run(host='localhost', port=8080)
+#from bottle import debug, run
+#debug(True)
+#run(host='localhost', port=8080)

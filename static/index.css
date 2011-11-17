@@ -13,7 +13,8 @@ html {
 	background-size: cover;
 }
 .bg_reader {
-	background: url(grain.jpg) repeat 0 0;
+	/*background: url(grain.jpg) repeat 0 0;*/
+	background-color: #fff;
 }
 
 /* Fill the page with a body, allowing a custom scrollbar */
@@ -27,7 +28,7 @@ body {
 	overflow-x: auto;
 	overflow-y: hidden; /* Don't scroll y, only x */
 }
-
+@media screen and (min-device-width: 1000px){
 /* Custom scrollbar */
 ::-webkit-scrollbar {
 	width: 10px;
@@ -54,7 +55,7 @@ body {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
-
+}
 /* This is the main div that holds all of our article headlines */
 #content, #text {
 	padding: 10px;
@@ -62,6 +63,7 @@ body {
 	width: auto;
 }
 #text {
+	/*background: url(grain.jpg) repeat 0 0;*/
 	border-radius: 10px;
 	color: #000;
 	font-size: 20px;
@@ -94,7 +96,6 @@ body {
 .article:hover {
 	background-color:rgba(256,256,256,.7);
 	color: #000;
-	color: #6090CF;
 }
 
 .columns {
@@ -121,8 +122,20 @@ body {
 
 a {
 	text-decoration: none;
-	color: #000;
+	border-radius: 10px;
+	padding: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+	background-color: #FFF;
+	color: #6090CF;
 }
 a:hover {
-	color: #6090CF;
+	color: #FFF;
+	background-color: #6090CF;
+}
+h1 a {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	border-radius: 0px;
+	padding: 3px;
 }
