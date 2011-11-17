@@ -1,4 +1,5 @@
 import news # get the news
+import shelve # load articles
 from bottle import debug, run, template, route, request, view, static_file, default_app # run a web app
 
 debug(True)
@@ -15,10 +16,22 @@ class index():
 	@route('/:tags', 'GET')
 	@view('index')
 	def get(tags=None):
+		# load the articles from a shelf
+		try:
+			db = shelve.open("news.shelf")
+			if not db.has_key('articles'):
+				db['articles'] = []
+			articles = db['articles']
+			db.close()
+		except:
+			articles = [news.Article("error", "error", "error", "error", "error")]
+
+		# limit the number of articles to 25
+		articles = articles[-25:] # TODO: sort articles by pub date
+
 		if tags == 'favicon.ico':
 			tags = None
-		articles = news.NYT_mostPopular()
-		articles.extend(news.AP_topNews())
+		
 		out = []
 		if not tags:
 			out = articles
@@ -38,8 +51,6 @@ class index():
 						break
 				if do_app:
 					out.append(a)
-				
-
 		return dict(articles=out)
 	
 	@route('/viewtext/:url#.+#', 'GET')
