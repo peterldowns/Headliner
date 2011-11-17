@@ -55,6 +55,9 @@ class index():
 	@route('/viewtext/:url#.+#', 'GET')
 	def viewtext(url):
 		title, url, body = news.viewtext(url)
+		print "Title: %s" % title
+		print "Url: %s" % url
+		print "Body: %s" % body
 		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
 		return header+body
 
