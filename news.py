@@ -73,10 +73,10 @@ def viewtext(url):
 	viewtext = "http://viewtext.org/api/text?url=%s&format=%s"
 	format = "json"
 	req_string = viewtext % (urllib.quote(url), format)
-	print "requesting to %s" % req_string
+	#print "requesting to %s" % req_string
 	resp = requests.get(req_string)
-	print "resp.status_code = %d" % resp.status_code
-	print "resp.content =", resp.content
+	#print "resp.status_code = %d" % resp.status_code
+	#print "resp.content =", resp.content
 	data = json.loads(resp.content)
 	
 	#print json.dumps(data, sort_keys=True, indent=4)
