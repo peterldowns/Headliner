@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="/static/index.css" />
 	<script type="text/javascript" src="static/jquery.js"></script>
 	<script type="text/javascript" src="static/index.js"></script>
+	<!-- start Mixpanel --><script type="text/javascript">var mpq=[];mpq.push(["init","ca3cd0bc73f9f1769760e83bc934727e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();</script><!-- end Mixpanel -->
 </head>
 <body>
 	<div id="content" class="columns">
@@ -21,8 +22,7 @@
 	%end
 	</div>
 	<div id="text" class="columns"></div>
-	<!-- Analytics -->
-	<a title="Web Statistics" href="http://getclicky.com/66505054"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a><script type="text/javascript"> var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(66505054); (function() { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//static.getclicky.com/js'; ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s ); })(); </script> <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66505054ns.gif" /></p></noscript>
+	<!-- start Clicky--> <a title="Web Statistics" href="http://getclicky.com/66505054"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a><script type="text/javascript"> var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(66505054); (function() { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//static.getclicky.com/js'; ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s ); })(); </script> <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66505054ns.gif" /></p></noscript><!-- end Clicky -->
 
 </body>
 </html>
