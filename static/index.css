@@ -68,6 +68,7 @@ body {
 	border-radius: 5px;
 }
 }
+
 /* This is the main div that holds all of our article headlines */
 #content, #text {
 	padding: 10px;
@@ -142,6 +143,11 @@ a {
 	background-color: #FFF;
 	color: #6090CF;
 }
+img {
+	max-width: 262px;
+	height: auto;
+	width: auto;
+}
 a:hover {
 	color: #FFF;
 	background-color: #6090CF;
@@ -150,4 +156,13 @@ h1 a {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	border-radius: 0px;
 	padding: 3px;
+}
+
+.close a {
+	color: #CF9060;
+	background-color: #FFF;
+}
+.close a:hover {
+	background-color: #CF9060;
+	color: #FFF;
 }
