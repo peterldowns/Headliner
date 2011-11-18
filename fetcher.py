@@ -1,39 +1,19 @@
-#!/usr/bin/env python
-
-import news
-import sys
-import time
-import signal
-
-# Callback called when you run `supervisorctl stop'
-def sigterm_handler(signum, frame):
-	print >> sys.stderr, "Kaboom Baby!"
-	sys.exit(0)
-
-def main():
-	while True:
-		print >> sys.stderr, "Tick"
-		time.sleep(1)
-
-# Bind our callback to the SIGTERM signal and run the daemon:
-signal.signal(signal.SIGTERM, sigterm_handler)
-main()
-
-"""
-#!/usr/bin/env python
 import sys
 import time
 import signal
 import shelve
 import news
+"""
 # SIGINT handler
-
 def sigterm_handler(signum, frame):
 	cur_time = time.asctime(time.localtime(time.time()))
 	print >> sys.stderr, "Interrupted at %s" % cur_time
 	sys.exit(0)
 
 
+# Bind our handler to SIGINT
+signal.signal(signal.SIGTERM, sigterm_handler)
+"""
 def main():
 	#cur_time = time.asctime(time.localtime(time.time()))
 	#print >> sys.stderr, "Program was run at %s" % cur_time
@@ -65,18 +45,7 @@ def main():
 	cur_time = time.asctime(time.localtime(time.time()))
 	print >> sys.stderr, "@ %s: num_articles=%d, new=%d" % (cur_time, len(out), added)
 	db.close()
-	return
+	sys.exit(0)
 
-def do():
-	while True:
-		print "== RUNNING MAIN =="
-		main()
-		print "== FINISHED MAIN =="
-		time.sleep(60)
-
-
-# Bind our handler to SIGINT
-signal.signal(signal.SIGTERM, sigterm_handler)
 # Run the main program
-do()
-"""
+main()
