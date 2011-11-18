@@ -22,7 +22,8 @@ $(document).ready(function(){
 	$(".article").each(function(index, obj){
 		$(obj).click(function(e){
 			$("#content").fadeOut("fast");
-			$("#text").html("<center><h1>Loading</h1></center>");
+			var loadingstr = "<center><div><h1> Loading </h1><img src=\"/static/ajax-loader.gif\" /></div></center>";
+			$("#text").html(loadingstr);
 			$("#content").fadeOut("fast");
 			bg_main_off();
 			$("#text").fadeIn("slow");
