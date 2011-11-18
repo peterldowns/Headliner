@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import news
 import sys
 import time
