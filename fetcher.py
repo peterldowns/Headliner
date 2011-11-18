@@ -6,7 +6,7 @@ import signal
 
 # Callback called when you run `supervisorctl stop'
 def sigterm_handler(signum, frame):
-    print >> sys.stderr, "Kaboom Baby!"
+	print >> sys.stderr, "Kaboom Baby!"
 	sys.exit(0)
 
 def main():
