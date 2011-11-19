@@ -25,13 +25,15 @@ class index():
 			if not db.has_key('articles'):
 				db['articles'] = []
 			articles = db['articles']
-			db.close()
 		except:
 			articles = [news.Article("error", "error", "error", "error", "error")]
+		else:
+			db.close()
 
-		# limit the number of articles to 25
+		# limit the number of articles
 		articles = articles[:-40:-1] # TODO: sort articles by pub date
 		# TODO: this *does* do fetch order .... more or less date?
+		# get the last 50 articles
 
 		out = []
 		if not tags:
@@ -56,14 +58,49 @@ class index():
 	@route('/viewtext', 'GET')
 	def viewtext():
 		url = request.GET.get('url', "ERROR, please try a different link")
-		title, url, body = news.viewtext(url)
+		print "@viewtext: req for %s" % url
+		articles = []
+		try:
+			db = shelve.open("news.shelf")
+			if not db.has_key('articles'):
+				db['articles'] = []
+			articles = db['articles']
+		except: pass
+		else:
+			db.close()
+		
+		# try to return saved html
+		for a in articles:
+			if a.url == url and a.html:
+				print "-> HTML was cached."
+				return a.html
+		
+		# otherwise, fetch it again ...
+		print "-> fetching from viewtext.com ..."
+		title, _, body = news.viewtext(url)
 		header = "<div class=\"headline\">"\
 				 "<h1>"\
 				 "<a href=\"%s\">%s</a>"\
 				 "</h1>"\
 				 "</div>" % (url, title)
-
-		#header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
+		# ... and save it for next time
+		try:
+			db = shelve.open("news.shelf")
+			tmp = None
+			if not db.has_key('articles'):
+				tmp = []
+			else:
+				tmp = db['articles']
+			for a in tmp:
+				if a.url == url:
+					a.html = header+body
+					print "-> cached result!"
+					break
+			db['articles'] = tmp
+		except: pass
+		else:
+			db.close()
+		
 		return header+body
 
 	@route("/diffbot", 'GET')
@@ -83,6 +120,6 @@ class index():
 		return header+body
 
 application = default_app()
-#from bottle import debug, run
-#debug(True)
-#run(host='localhost', port=8080)
+from bottle import debug, run
+debug(True)
+run(host='localhost', port=8080)
