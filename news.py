@@ -161,6 +161,41 @@ def APcats():
 		yield "%s,%s" % (id, name)
 
 """ ARTICLE SOURCES """
+def NPR_get_articles(jresp):
+	stories = jresp['list']['story']
+	num = len(stories)
+	
+	articles = []
+	for story in stories:
+		pub_date = story['pubDate']['$text']
+		title = story['title']['$text']
+		source = "NPR"
+		url = story['link'][0]['$text']
+		url = url.split("?")[0] # remove any get params
+		
+		# there aren't really any tags... doing my best
+		tags = []
+		tags.append(story['slug']['$text'])
+		tags.extend(story['teaser']['$text'].split(' '))
+		
+		# make the article
+		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		
+		articles.append(a)
+	
+	return articles
+
+def NPR_news():
+	id = 1001 # "News"
+	fields = "summary" #",".join(["summary"])
+	required_assets = "text" #",".join(["text"])
+	count = 20
+	base = "http://api.npr.org/query?id=%d&fields=%s&requiredAssets=%s&dateType=story&sort=dateDesc&output=JSON&numResults=%d&apiKey=%s"
+	reqstr = base % (id, fields, required_assets, count, NPR_key)
+	r = requests.get(reqstr)
+	jresp = json.loads(r.content)
+	return NPR_get_articles(jresp)
+
 def AP_topNews():
 	count = 25
 	APkey = AP_keys["breaking-news"]
@@ -175,6 +210,7 @@ def AP_topNews():
 	articles = []
 	for entry in soup.findAll('entry'):
 		url = str(entry.link["href"])
+		url = url.split("?")[0] # remove any get params
 		title = str(entry.title.string)
 		source = "Associated Press"
 		pub_date = str(entry.updated.string.split('T')[0])
@@ -195,6 +231,7 @@ def NYT_get_articles(jresp):
 	articles = []
 	for data in jresp["results"]:
 		url = data["url"]
+		url = url.split("?")[0] # remove any get params
 		title = data["title"]
 		source = data["source"]
 		pub_date = data["published_date"]
