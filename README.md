@@ -26,10 +26,11 @@ otherwise, viewtext.com's API is called instead.
 ##Todo:##
 
 1. Add more sources
-2. Change fetcher cronjob to a worker process
+2. Start filtering the news to show headlines that it thinks I would like
+3. Change fetcher cronjob to a worker process
 	* right now, there are weird problems with the python env (?)
-3. Improve the reading interface
-4. Better article parsing (don't just rely on viewtext and diffbot)
+4. Improve the reading interface
+5. Better article parsing (don't just rely on viewtext and diffbot)
 	* maybe use a custom BeautifulSoup scraper (?)
-5. Add user authentication (let people other than me use it?)
+6. Add user authentication (let people other than me use it?)
 	* maybe not - check the developer license terms
