@@ -33,7 +33,6 @@ class index():
 		# limit the number of articles
 		articles = articles[:-40:-1] # TODO: sort articles by pub date
 		# TODO: this *does* do fetch order .... more or less date?
-		# get the last 50 articles
 
 		out = []
 		if not tags:
