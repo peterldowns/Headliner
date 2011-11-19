@@ -1,0 +1,1028 @@
+{
+    "list": {
+        "link": [
+            {
+                "$text": "http://api.npr.org/query?id=1001&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                "type": "api"
+            }, 
+            {
+                "$text": "http://www.npr.org/sections/news/?ft=3&f=1001", 
+                "type": "html"
+            }
+        ], 
+        "miniTeaser": {
+            "$text": "Breaking news from acclaimed programs \"Morning Edition\" and \"All Things Considered.\""
+        }, 
+        "story": [
+            {
+                "id": "142518509", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Sat, 19 Nov 2011 13:24:44 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/blogs/thesalt/2011/11/19/142518509/dirty-ovens-built-in-seasoning-or-grimy-mess?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142518509&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/tss18R", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Is it worth cleaning out the oven before you roast your Thanksgiving turkey?"
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Sat, 19 Nov 2011 13:24:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "The Salt"
+                }, 
+                "storyDate": {
+                    "$text": "Sat, 19 Nov 2011 13:24:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Preparing for a Thanksgiving feasts brings a host of extra domestic tasks. Here's one you might not think about until you go to cook your turkey: how important is it to clean the oven?"
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/oven-grease_sq.jpg?t=1321659669&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/oven-grease_sq.jpg?t=1321659669&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "iStockphoto.com"
+                    }
+                }, 
+                "title": {
+                    "$text": "Dirty Ovens: Built-In Seasoning Or Grimy Mess?"
+                }
+            }, 
+            {
+                "id": "142534943", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Sat, 19 Nov 2011 11:57:55 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/19/142534943/pedro-pan-childrens-life-altering-flight-from-cuba?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142534943&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/vfxlh2", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "The U.S. government program brought thousands of Cubans to the U.S. after Fidel Castro took control."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Sat, 19 Nov 2011 08:21:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Around the Nation"
+                }, 
+                "storyDate": {
+                    "$text": "Sat, 19 Nov 2011 08:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "The U.S. government operation airlifted more than 14,000 Cuban children from Havana to the U.S. after Fidel Castro took control of Cuba. Fifty years later, those children are recalling how that flight changed their lives."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/19/george-guarch_sq.jpg?t=1321682020&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/19/george-guarch_sq.jpg?t=1321682020&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "Operation Pedro Pan Group"
+                    }
+                }, 
+                "title": {
+                    "$text": "Children Of Cuba Remember Their Flight To America"
+                }
+            }, 
+            {
+                "id": "142417256", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Sat, 19 Nov 2011 11:57:55 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/19/142417256/with-defense-budget-cuts-come-challenging-costs?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142417256&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/vojFlh", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "The Pentagon has to give up  billions from its budget, so which cuts might bleed the least?"
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Sat, 19 Nov 2011 05:00:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Politics"
+                }, 
+                "storyDate": {
+                    "$text": "Sat, 19 Nov 2011 08:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "The Pentagon and its growing budget is on the supercommittee's radar as it looks to reduce the federal deficit by $1.2 trillion. At half the federal government's budget, it's not hard to see why, so which cuts might bleed the least?"
+                }, 
+                "title": {
+                    "$text": "Some Easy Targets For Defense Cuts"
+                }
+            }, 
+            {
+                "id": "142532640", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Sat, 19 Nov 2011 12:18:10 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/19/142532640/u-s-keeps-wary-eye-on-kenyas-campaign-in-somalia?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142532640&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/rszPss", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "\"It's fraught with a lot of problems and dangers,\" a State Department official says."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 21:28:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Africa"
+                }, 
+                "storyDate": {
+                    "$text": "Sat, 19 Nov 2011 08:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Kenya's incursion into Somalia last month to go after the militant Islamist group al-Shabab caught the United States and others off guard and has raised alarms among aid groups. While Kenya has asked for U.S. assistance, the State Department is advising caution."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/129663043_sq.jpg?t=1321723090&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/129663043_sq.jpg?t=1321723090&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "AFP/Getty Images"
+                    }
+                }, 
+                "title": {
+                    "$text": "U.S. Keeps Wary Eye On Kenya's Campaign In Somalia"
+                }
+            }, 
+            {
+                "id": "142530740", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Sat, 19 Nov 2011 12:44:06 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/19/142530740/tension-runs-high-in-kenyas-little-mogadishu?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142530740&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/sgDFwA", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Residents feel they are being discriminated against as Kenya vows to crush a Somali militant group."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 19:51:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Africa"
+                }, 
+                "storyDate": {
+                    "$text": "Sat, 19 Nov 2011 08:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Kenya's Somali community feels it has become the target of a security crackdown after authorities vowed to drive out supporters of the Somali Islamist group al-Shabab. Some residents of Nairobi's Eastleigh neighborhood, dubbed \"Little Mogadishu,\" say they no longer feel like they belong."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/img_9325_sq.jpg?t=1321664587&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/img_9325_sq.jpg?t=1321664587&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "NPR"
+                    }
+                }, 
+                "title": {
+                    "$text": "Tension Runs High In Kenya's 'Little Mogadishu'"
+                }
+            }, 
+            {
+                "id": "142499490", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Sat, 19 Nov 2011 09:44:56 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/19/142499490/5-things-you-may-not-know-about-gingrich?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142499490&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/tSvKYN", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Is there anything new to know about Newt?  Maybe."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Sat, 19 Nov 2011 05:55:00 -0500"
+                }, 
+                "shortTitle": {
+                    "$text": "Five Things You May Not Know About Newt Gingrich"
+                }, 
+                "slug": {
+                    "$text": "Newt Gingrich"
+                }, 
+                "storyDate": {
+                    "$text": "Sat, 19 Nov 2011 05:55:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Newt Gingrich has been in the public eye for decades. Now that he is a potential presidential nominee, we wonder: Is there anything new to know about Newt?  Maybe."
+                }, 
+                "title": {
+                    "$text": "5 Things You May Not Know About Gingrich"
+                }
+            }, 
+            {
+                "id": "142509468", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Sat, 19 Nov 2011 06:11:16 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/18/142509468/foreign-policy-funding-a-top-candidate-for-cuts?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142509468&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/uSCWl3", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Foreign aid takes up a small share of government spending, but it's about to be cut even more."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Sat, 19 Nov 2011 00:40:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Politics"
+                }, 
+                "storyDate": {
+                    "$text": "Sat, 19 Nov 2011 00:40:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Foreign aid is being attacked by presidential candidates and members of Congress. It looks certain that assistance to other countries, which makes up a miniscule percentage of the overall budget, is about to be cut even further."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/ChinaCoal1_sq.jpg?t=1321666433&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/ChinaCoal1_sq.jpg?t=1321666433&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "AP"
+                    }
+                }, 
+                "title": {
+                    "$text": "Foreign Policy Funding A Top Candidate For Cuts"
+                }
+            }, 
+            {
+                "id": "142527872", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 18:44:51 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/blogs/thetwo-way/2011/11/18/142527872/cool-photo-scientists-present-lightest-material-on-earth?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142527872&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/tbWzSq", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Ultralight metallic microlattice can sit atop a delicate dandelion without crushing the fuzzy seeds."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 18:43:00 -0500"
+                }, 
+                "shortTitle": {
+                    "$text": "Scientists Present 'Lightest Material On Earth'"
+                }, 
+                "slug": {
+                    "$text": "The Two-Way"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 18:43:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Ultralight metallic microlattice is one hundred times lighter than styrofoam and it can sit atop a delicate dandelion without crushing the fuzzy seeds."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/microlattice_highres_sq.jpg?t=1321659779&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/microlattice_highres_sq.jpg?t=1321659779&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "HRL Laboratories"
+                    }
+                }, 
+                "title": {
+                    "$text": "Cool Photo: Scientists Present 'Lightest Material On Earth'"
+                }
+            }, 
+            {
+                "id": "142519292", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 17:21:11 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/blogs/thetwo-way/2011/11/18/142519292/self-help-guru-sentenced-to-two-years-in-prison-over-sweat-lodge-deaths?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142519292&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/spp537", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Three people died in a sweat lodge ceremony run by James Arthur Ray."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 17:19:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "The Two-Way"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 17:19:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "A judge issued the sentence saying James Arthur Ray was extremely negligent. Three people died in a sweat lodge ceremony run by Ray."
+                }, 
+                "title": {
+                    "$text": "Self-Help Guru Sentenced To Two Years In Prison Over Sweat Lodge Deaths"
+                }
+            }, 
+            {
+                "id": "142520345", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 18:46:19 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/blogs/thetwo-way/2011/11/18/142520345/former-penn-state-coach-joe-paterno-has-cancer?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142520345&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/sRUKML", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Paterno's son said doctors are optimistic about his father's recovery."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 16:26:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "The Two-Way"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 16:26:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Paterno's son said doctors are optimistic about his father's recovery."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/paterno18_sq.jpg?t=1321651664&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/paterno18_sq.jpg?t=1321651664&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "Getty Images"
+                    }
+                }, 
+                "title": {
+                    "$text": "Former Penn State Coach Joe Paterno Has Cancer"
+                }
+            }, 
+            {
+                "id": "142515814", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 15:47:17 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/blogs/thetwo-way/2011/11/18/142515814/ncaa-to-examine-penn-states-sports-programs?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142515814&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/s7NOyo", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Key issue: How coach Joe Paterno and others dealt with allegations about abuse of young boys."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 15:45:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "The Two-Way"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 15:45:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "\"If true, individuals who were in a position to monitor and act upon learning of potential abuses appear to have been acting starkly contrary to the values of higher education, as well as the NCAA,\" association President Mark Emmert says."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/paterno18_sq.jpg?t=1321648964&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/paterno18_sq.jpg?t=1321648964&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "Getty Images"
+                    }
+                }, 
+                "title": {
+                    "$text": "NCAA To Examine Penn State's Sports Programs"
+                }
+            }, 
+            {
+                "id": "142510299", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 16:38:26 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/18/142510299/panetta-on-other-end-of-budget-cuts-as-role-changes?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142510299&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/siw85p", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "As OMB director, he helped implement budget cuts. As defense secretary, he pushes back against them."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 15:41:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Politics"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 15:41:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "The defense secretary, who warned Congress earlier this month of the dangers of budget cuts in his agency, once had to help implement cuts as director of the Office of Management and Budget."
+                }, 
+                "title": {
+                    "$text": "Panetta On Other End Of Budget Cuts As Role Changes"
+                }
+            }, 
+            {
+                "id": "142515521", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 15:32:26 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/blogs/thetwo-way/2011/11/18/142515521/china-now-investigating-nude-photos-of-outspoken-artist-ai-weiwei?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142515521&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/vWXn7p", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "The artist said this investigation is yet another attempt by Chinese authorities to silence him."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 15:30:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "The Two-Way"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 15:30:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "The artist said the latest investigation is yet another attempt by the Chinese government to silence him."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/507285815_9559273-1-_sq.jpg?t=1321648186&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/507285815_9559273-1-_sq.jpg?t=1321648186&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "AFP/Getty Images"
+                    }
+                }, 
+                "title": {
+                    "$text": "China Now Investigating Nude Photos Of Outspoken Artist Ai Weiwei"
+                }
+            }, 
+            {
+                "id": "142508464", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 20:02:46 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/18/142508464/cabret?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142508464&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/uwTWj5", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Martin Scorsese's latest film,<em> Hugo,</em> pays tribute to early 20th-century filmmaker Georges Melies."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 17:49:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Movie Interviews"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 15:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Based on Brian Selznick's 2007 children's book, Martin Scorsese's latest film,<em> Hugo,</em> pays tribute to early 20th-century French filmmaker \u2014 and cinematic trailblazer \u2014 Georges Melies."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/martin-hugo-small_sq.jpg?t=1321658786&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/martin-hugo-small_sq.jpg?t=1321658786&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "GK Films"
+                    }
+                }, 
+                "title": {
+                    "$text": "In 'Hugo,' Scorsese  Salutes A Movie Magician"
+                }
+            }, 
+            {
+                "id": "142518903", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 20:02:46 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/blogs/health/2011/11/18/142518903/gingrichs-history-on-health-care-gets-an-exam?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142518903&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/uMOmOL", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "An insurance mandate and incentives for computerized medical records are planks of health overhaul."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 16:34:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Shots - Health Blog"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 15:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Some of the positions Gingrich took while at the helm of a health care think tank are getting another look. Ideas such as an insurance mandate and incentives to spur the use of computerized medical records are planks of the Democrats' health overhaul law."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/newtgingrich_sq.jpg?t=1321651880&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/newtgingrich_sq.jpg?t=1321651880&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "Getty Images"
+                    }
+                }, 
+                "title": {
+                    "$text": "Gingrich's History On Health Care Gets An Exam"
+                }
+            }, 
+            {
+                "id": "142506821", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 21:13:15 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/18/142506821/myanmars-capital-a-white-elephant-in-the-jungle?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142506821&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/rQX0Tt", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "Naypyitaw boasts manicured boulevards and well-stocked supermarkets \u2014 but not many residents."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 15:46:00 -0500"
+                }, 
+                "shortTitle": {
+                    "$text": "Myanmar's Ghost Capital Rises From The Jungle"
+                }, 
+                "slug": {
+                    "$text": "Asia"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 15:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "In 2005, Myanmar's military rulers picked up the government and moved it to a remote city newly built in the country's jungle. Naypyitaw boasts manicured boulevards and well-stocked supermarkets \u2014 but not many residents. The impressive surface, many say, belies an aging dictator's paranoia."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/myanmar_3_sq.jpg?t=1321648220&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/myanmar_3_sq.jpg?t=1321648220&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "AFP/Getty Images"
+                    }
+                }, 
+                "title": {
+                    "$text": "Myanmar's Ghost Capital Rises From The Jungle"
+                }
+            }, 
+            {
+                "id": "142518963", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 20:02:46 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/18/142518963/future-of-ministry-uncertain-after-cathedrals-sale?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142518963&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/vAtCMQ", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "The future is unclear for the congregation of the California church, home to the <em>Hour of Power</em>."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 15:00:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Religion"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 15:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "California's Crystal Cathedral, which became a beacon of Protestant televangelism as the home of the <em>Hour of Power</em>, is being sold for $57 million. The decision left some congregants furious and their future up in the air."
+                }, 
+                "title": {
+                    "$text": "Catholic Church To Buy Famed Crystal Cathedral"
+                }
+            }, 
+            {
+                "id": "142511968", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 20:02:46 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/18/142511968/wheres-mitt-romney-running-out-the-clock?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142511968&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/viA0SO", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "As his opponents stumble, he's flying under the radar \u2014 while wooing endorsements and raising cash."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 13:23:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Mitt Romney"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 15:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "As his opponents seem to stumble day after day, the former Massachusetts governor avoids mishap in part by doing just a few public events a week. Behind the scenes, he's wooing endorsements and raising a good bit of cash."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/mitt_1_sq.jpg?t=1321650803&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/mitt_1_sq.jpg?t=1321650803&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "Getty Images"
+                    }
+                }, 
+                "title": {
+                    "$text": "Where's Mitt Romney? 'Running Out The Clock'"
+                }
+            }, 
+            {
+                "id": "142503423", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Sat, 19 Nov 2011 10:47:18 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/18/142503423/are-candidates-selling-their-ideas-or-their-books?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142503423&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/rALzrM", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "For some candidates, their entire candidacy is one big promotional opportunity."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 10:33:00 -0500"
+                }, 
+                "shortTitle": {}, 
+                "slug": {
+                    "$text": "Presidential Race"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 15:00:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "If a candidate has written a book \u2014 like Newt Gingrich, Herman Cain and Michele Bachmann \u2014 the campaign trail presents many opportunities to promote it. These candidate books are a time-honored tradition: The all-time sales champ is Barack Obama's <em>The Audacity of Hope</em>."
+                }, 
+                "title": {
+                    "$text": "Are Candidates Selling Their Ideas Or Their Books?"
+                }
+            }, 
+            {
+                "id": "142513520", 
+                "keywords": {}, 
+                "lastModifiedDate": {
+                    "$text": "Fri, 18 Nov 2011 16:55:26 -0500"
+                }, 
+                "link": [
+                    {
+                        "$text": "http://www.npr.org/2011/11/18/142513520/climate-panel-more-extreme-weather-on-the-way?ft=3&f=1001", 
+                        "type": "html"
+                    }, 
+                    {
+                        "$text": "http://api.npr.org/query?id=142513520&apiKey=MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001", 
+                        "type": "api"
+                    }, 
+                    {
+                        "$text": "http://n.pr/vacFCB", 
+                        "type": "short"
+                    }
+                ], 
+                "miniTeaser": {
+                    "$text": "A U.N. report says climate change will bring more heat waves and more intense rainfall."
+                }, 
+                "priorityKeywords": {}, 
+                "pubDate": {
+                    "$text": "Fri, 18 Nov 2011 14:49:00 -0500"
+                }, 
+                "shortTitle": {
+                    "$text": "Climate Panel: More Extreme Weather On Way"
+                }, 
+                "slug": {
+                    "$text": "Environment"
+                }, 
+                "storyDate": {
+                    "$text": "Fri, 18 Nov 2011 14:49:00 -0500"
+                }, 
+                "subtitle": {}, 
+                "teaser": {
+                    "$text": "Climate change will bring more heat waves, more intense rainfall and more expensive natural disasters, says a group of more than 200 scientists convened by the United Nations."
+                }, 
+                "thumbnail": {
+                    "large": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/wave-nice-france_sq.jpg?t=1321643669&s=11"
+                    }, 
+                    "medium": {
+                        "$text": "http://media.npr.org/assets/img/2011/11/18/wave-nice-france_sq.jpg?t=1321643669&s=13"
+                    }, 
+                    "provider": {
+                        "$text": "AFP/Getty Images"
+                    }
+                }, 
+                "title": {
+                    "$text": "Climate Panel: More Extreme Weather On The Way"
+                }
+            }
+        ], 
+        "teaser": {
+            "$text": "NPR news, audio, and podcasts. Coverage of breaking stories, national and world news, politics, business, science, technology, and extended coverage of major national and world events."
+        }, 
+        "title": {
+            "$text": "NPR Topics: News"
+        }
+    }, 
+    "version": "0.94"
+}
