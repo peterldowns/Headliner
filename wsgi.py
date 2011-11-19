@@ -70,8 +70,8 @@ class index():
 		
 		# try to return saved html
 		for a in articles:
-			if a.url == url and a.html:
-				print "-> HTML was cached."
+			if url == a.url and a.html:
+				print "-> returning cached HTML"
 				return a.html
 		
 		# otherwise, fetch it again ...
@@ -93,7 +93,7 @@ class index():
 			for a in tmp:
 				if a.url == url:
 					a.html = header+body
-					print "-> cached result!"
+					print "   (cached result for later)"
 					break
 			db['articles'] = tmp
 		except: pass
