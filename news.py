@@ -161,13 +161,15 @@ def APcats():
 		yield "%s,%s" % (id, name)
 
 """ ARTICLE SOURCES """
-def AP_topNews(count=10):
+def AP_topNews():
+	count = 25
 	APkey = AP_keys["breaking-news"]
 	category = 41664 # AP Online Top General Short Headlines
 	contentOption = 0
 	base = "http://developerapi.ap.org/v2/categories.svc/%d/?contentOption=%d&count=%d"\
 		"&mediaOption=0&apiKey=%s"
-	r = requests.get(base % (category, contentOption, count, APkey))
+	reqstr = base % (category, contentOption, count, APkey)
+	r = requests.get(reqstr)
 	soup = BeautifulSoup.BeautifulSoup(r.content)
 
 	articles = []

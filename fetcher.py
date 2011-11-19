@@ -18,10 +18,11 @@ def main():
 	#cur_time = time.asctime(time.localtime(time.time()))
 	#print >> sys.stderr, "Program was run at %s" % cur_time
 	
-	new_articles = news.AP_topNews(30)
+	new_articles = news.AP_topNews()
 	new_articles.extend(news.NYT_mostPopular())
 	new_articles.extend(news.NYT_recent())
-
+	
+	out = []
 	try:
 		db = shelve.open("news.shelf")
 		if not db.has_key('articles'):
@@ -38,13 +39,13 @@ def main():
 	_urls = map(lambda x: x.url, out)
 	for a in new_articles:
 		if not a.url in _urls:
-			added += 1
 			out.append(a)
+			added += 1
 	db['articles']	= out
 
 	
 	cur_time = time.asctime(time.localtime(time.time()))
-	print >> sys.stderr, "@ %s: num_articles=%d, new=%d" % (cur_time, len(out), added)
+	print >> sys.stderr, "@ %s: fetched articles=%d, new articles=%d" % (cur_time, len(out), added)
 	db.close()
 	sys.exit(0)
 
