@@ -224,12 +224,12 @@ def NYT_get_articles(jresp):
 		articles.append(a)
 	return articles
 
-def NYT_recent(num_days=1, source="all", sec_list=["all"], limit=25):
+def NYT_recent(num_days=1, source="all", sec_list=["all"]):
 	fmt = "json"
 	sections = ";".join(sec_list)
 	key = NYT_keys["news-wire"]
-	base = "http://api.nytimes.com/svc/news/v3/content/%s/%s/%d.%s?&limit=%d&api-key=%s"
-	req_str = base % (source, sections, num_days, fmt, limit, key)
+	base = "http://api.nytimes.com/svc/news/v3/content/%s/%s/%d.%s?api-key=%s"
+	req_str = base % (source, sections, num_days, fmt, key)
 	r = requests.get(req_str)
 	jresp = json.loads(r.content)
 	return NYT_get_articles(jresp)
@@ -248,6 +248,7 @@ def NYT_mostPopular(num_days=1, type="mostviewed", sec_list=["all-sections"]):
 if __name__=="__main__":
 	articles = NYT_mostPopular()
 	articles.extend(AP_topNews())
+	articles.extend(NYT_recent())
 	print "Latest Articles:"
 	for a in articles:
 		print "\t%s (%s, %s) - %s" % (a.title, a.source, a.pub_date, a.url)

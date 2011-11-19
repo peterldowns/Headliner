@@ -18,8 +18,9 @@ def main():
 	#cur_time = time.asctime(time.localtime(time.time()))
 	#print >> sys.stderr, "Program was run at %s" % cur_time
 	
-	new_articles = news.AP_topNews(20)
+	new_articles = news.AP_topNews(30)
 	new_articles.extend(news.NYT_mostPopular())
+	new_articles.extend(news.NYT_recent())
 
 	try:
 		db = shelve.open("news.shelf")
