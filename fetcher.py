@@ -21,6 +21,7 @@ def main():
 	new_articles = news.AP_topNews()
 	new_articles.extend(news.NYT_mostPopular())
 	new_articles.extend(news.NYT_recent())
+	new_articles.extend(news.NPR_news())
 	
 	out = []
 	try:
