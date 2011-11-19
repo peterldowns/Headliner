@@ -148,6 +148,7 @@ NYT_keys = {
 AP_keys = {
 	"breaking-news" : "jdtcpmm95unxu84vwuvhnuav"
 }
+NPR_key = "MDA4NDY3NzI0MDEzMjEwNjExOTdkMDUyMA001"
 
 def APcats():
 	APkey = AP_keys["breaking-news"]
@@ -179,13 +180,59 @@ def AP_topNews(count=10):
 		tags = []
 		tags.extend([str(cat['label']) for cat in entry.findAll('category')])
 		
-		a = Article(url, source, pub_date, map(str.lower, tags), title)
+		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
 		if contentOption == 2: # if we get the source text with it, may as well use it
 			entry_content = entry.findAll(attrs={"class":"entry-content"})[0].contents
 			a.html = "".join(map(str, entry_content))
 			a.text = " ".join(map(lambda x: re.sub(r'<[^>]+>', '', str(x)), entry_content))
 		articles.append(a)
 	return articles
+
+
+def NYT_get_articles(jresp):
+	articles = []
+	for data in jresp["results"]:
+		url = data["url"]
+		title = data["title"]
+		source = data["source"]
+		pub_date = data["published_date"]
+		
+		# tags
+		tags = []
+		tags.extend(title.split())
+
+		for tt in ["org_facet", "section", "geo_facet", "des_facet"]:
+			# organizations, newspaper section, geography, NYT tags
+			try:
+				tags.extend(data.get(tt, [])) # organizations
+			except TypeError as te:
+				pass
+		
+		try:
+			for perstr in data.get("per_facet", []): # people
+				fl = perstr.split(", ")
+				if len(fl) == 2:
+					last, first = perstr.split(", ")
+					first = first.split()[0]
+					tags.append(" ".join([first, last]))
+				else:
+					tags.append(perstr)
+		except TypeError as te:
+			pass
+		
+		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		articles.append(a)
+	return articles
+
+def NYT_recent(num_days=1, source="all", sec_list=["all"], limit=25):
+	fmt = "json"
+	sections = ";".join(sec_list)
+	key = NYT_keys["news-wire"]
+	base = "http://api.nytimes.com/svc/news/v3/content/%s/%s/%d.%s?&limit=%d&api-key=%s"
+	req_str = base % (source, sections, num_days, fmt, limit, key)
+	r = requests.get(req_str)
+	jresp = json.loads(r.content)
+	return NYT_get_articles(jresp)
 
 def NYT_mostPopular(num_days=1, type="mostviewed", sec_list=["all-sections"]):
 	""" Return a list of Article objects """
@@ -196,31 +243,7 @@ def NYT_mostPopular(num_days=1, type="mostviewed", sec_list=["all-sections"]):
 	r = requests.get(base % (type, sections, num_days))
 	jresp = json.loads(r.content)
 	
-	articles = []
-	for data in jresp["results"]:
-		url = data["url"]
-		title = data["title"]
-		source = data["source"]
-		pub_date = data["published_date"]
-		
-		# tags
-		tags = []
-		tags.extend(data["org_facet"]) # organizations
-		for perstr in data["per_facet"]: # people
-			fl = perstr.split(", ")
-			if len(fl) == 2:
-				last, first = perstr.split(", ")
-				first = first.split()[0]
-				tags.append(" ".join([first, last]))
-			else:
-				tags.append(perstr)
-		tags.append(data["section"]) # newspaper section
-		tags.extend(data["geo_facet"]) # geography
-		tags.extend(data["des_facet"]) # NYT tags
-		
-		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii').lower(), tags), title)
-		articles.append(a)
-	return articles
+	return NYT_get_articles(jresp)
 
 if __name__=="__main__":
 	articles = NYT_mostPopular()
