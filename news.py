@@ -199,9 +199,10 @@ def NYT_get_articles(jresp):
 		
 		# tags
 		tags = []
-		tags.extend(title.split())
+		tags.extend(title.split(' '))
+		tags.append(data.get("section", ""))
 
-		for tt in ["org_facet", "section", "geo_facet", "des_facet"]:
+		for tt in ["org_facet", "geo_facet", "des_facet"]:
 			# organizations, newspaper section, geography, NYT tags
 			try:
 				tags.extend(data.get(tt, [])) # organizations
