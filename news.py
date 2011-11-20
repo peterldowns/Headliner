@@ -196,10 +196,73 @@ def NPR_news():
 	jresp = json.loads(r.content)
 	return NPR_get_articles(jresp)
 
+
 def AP_topNews():
-	count = 25
+	categories = [
+		#31990, # Top General Short Headlines
+		31991, # Top International Short Headlines
+		31992, # Top Technology Short Headlines
+		31993, # Top Sports Short Headlines
+		31994, # Top Business Short Headlines
+		31995, # General Financial/Business News
+		31997, # Asia News
+		31998, # National News
+		#31999, # Baseball News
+		#32000, # Football News
+		#32001, # Basketball News
+		#32002, # Hockey News
+		32005, # High Tech News
+		32500, # Canada News
+		32501, # Latin America and Caribbean News
+		32502, # Europe News
+		32503, # Africa News
+		32505, # Middle East News
+		32506, # Feature Stories
+		32516, # President, White House, Advisers News
+		32517, # Cabinet News
+		32518, # Congress News
+		32519, # Supreme Court news
+		32520, # Other U.S. Government News
+		32523, # Government Economic Figures Reports
+		32526, # Personal Finance, Investing and Consumer News
+		32530, # Wall Street Stock reports
+		#32534, # TV News
+		#32535, # Movies News
+		#32536, # Recordings News
+		#32537, # Other Entertainment News
+		32538, # Health and medical news
+		32539, # Science News
+		#32541, # Baseball Game Stories
+		#32544, # Football Game Stories
+		#32547, # Basketball Game Stories
+		#32550, # Hockey Game stories
+		#32553, # Soccer News
+		#32554, # Soccer Game Stories
+		#32555, # College Sports News
+		#32556, # College Game stories
+		#32560, # Golf News
+		#32561, # Golf Tournament Stories and Results
+		#32562, # Other Sports News
+		#32564, # Tennis News
+		#32566, # Auto Racing News
+		#32568, # Boxing News
+		#32569, # Boxing Match Stories
+		32570, # Top U.S. News Short Headlines
+		#32571, # Top Entertainment Short Headlines
+		32573, # Top Political Short Headlines
+		#32574, # Top Strange Headlines
+		41664, # Top News
+	]
+	articles = []
+	for c in categories:
+		articles.extend(AP_news(c))
+		print "Fetched AP %d" % c
+	return articles
+
+def AP_news(category):
+	count = 5
 	APkey = AP_keys["breaking-news"]
-	category = 41664 # AP Online Top General Short Headlines
+	#category = 41664 # AP Online Top General Short Headlines
 	contentOption = 0
 	base = "http://developerapi.ap.org/v2/categories.svc/%d/?contentOption=%d&count=%d"\
 		"&mediaOption=0&apiKey=%s"
