@@ -1,5 +1,8 @@
 #!/bin/sh
+echo "postinstall: inside `pwd`"
 chmod +x dc_crontab fetcher.py
-echo "post: chmodded"
+echo "postinstall: chmodded"
 crontab dc_crontab
-echo "post: crontabbed"
+echo "postinstall: crontabbed"
+./fetcher.py
+echo "postinstall: DONE"
