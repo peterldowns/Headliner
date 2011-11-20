@@ -2,6 +2,7 @@ import requests # fetch articles
 import urllib # escape requests
 import json # parse result
 import BeautifulSoup, re # html cleaning
+import time # delay AP requests
 
 def cleanHTML(html):
 	""" Removes all custom / unuseful HTML tags from a given body of HTML """
@@ -257,6 +258,7 @@ def AP_topNews():
 	for c in categories:
 		articles.extend(AP_news(c))
 		print "Fetched AP %d" % c
+		time.sleep(1)
 	return articles
 
 def AP_news(category):
