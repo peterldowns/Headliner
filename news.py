@@ -189,7 +189,7 @@ def NPR_news():
 	id = 1001 # "News"
 	fields = "summary" #",".join(["summary"])
 	required_assets = "text" #",".join(["text"])
-	count = 20
+	count = 10
 	base = "http://api.npr.org/query?id=%d&fields=%s&requiredAssets=%s&dateType=story&sort=dateDesc&output=JSON&numResults=%d&apiKey=%s"
 	reqstr = base % (id, fields, required_assets, count, NPR_key)
 	r = requests.get(reqstr)
