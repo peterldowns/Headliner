@@ -353,6 +353,24 @@ def NYT_mostPopular(num_days=1, type="mostviewed", sec_list=["all-sections"]):
 	
 	return NYT_get_articles(jresp)
 
+def HN_frontPage():
+	base = "http://api.ihackernews.com/page"
+	r = requests.get(base)
+	jresp = json.loads(r.content)
+	articles = [] # url, source, pub_date, tags, title
+	source = "Hacker News"
+	for link in jresp['items']:
+		try:
+			url = link['url']
+			title = link['title']
+			pub_date = link['postedAgo']
+			tags = title.split(' ') # lack of tags :(
+			a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+			articles.append(a)
+		except: pass
+	return articles
+
+
 if __name__=="__main__":
 	articles = NYT_mostPopular()
 	articles.extend(AP_topNews())

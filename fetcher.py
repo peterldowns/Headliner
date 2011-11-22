@@ -6,7 +6,7 @@ import shelve
 import news
 
 new_articles = []
-source_fns = [news.AP_topNews, news.NYT_mostPopular, news.NYT_recent, news.NPR_news]
+source_fns = [news.AP_topNews, news.NYT_mostPopular, news.NYT_recent, news.NPR_news, news.HN_frontPage]
 
 for src in source_fns:
 	try:
