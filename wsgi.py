@@ -77,11 +77,11 @@ class index():
 		# otherwise, fetch it again ...
 		print "-> fetching from viewtext.com ..."
 		title, _, body = news.viewtext(url)
-		header = "<div class=\"headline\">"\
+		out = "<div class=\"headline\">"\
 				 "<h1>"\
 				 "<a href=\"%s\">%s</a>"\
 				 "</h1>"\
-				 "</div>" % (url, title)
+				 "</div>%s" % (url, title, body)
 		# ... and save it for next time
 		try:
 			db = shelve.open("news.shelf")
@@ -92,7 +92,7 @@ class index():
 				tmp = db['articles']
 			for a in tmp:
 				if a.url == url:
-					a.html = header+body
+					a.html = out
 					print "   (cached result for later)"
 					break
 			db['articles'] = tmp
@@ -100,7 +100,7 @@ class index():
 		else:
 			db.close()
 		
-		return header+body
+		return out
 
 	@route("/diffbot", 'GET')
 	def diffbot():
