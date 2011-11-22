@@ -79,9 +79,9 @@ def viewtext(url):
 	
 	#print json.dumps(data, sort_keys=True, indent=4)
 	#url = data.get("responseUrl")
-	content = data.get("content")
-	title = data.get("title")
-	return (title, url, content)
+	content = data.get("content", "")
+	title = data.get("title", "")
+	return (title, url, cleanHTML(content))
 	#debug = "<br>DEBUG<br>Url: %s<br>Request: %s<br>Response: %s<br>Data: %s"
 	#debug = debug % (str(url), str(req_string), str(resp), str(data))
 	#return (title, url, content, debug)
