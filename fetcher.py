@@ -5,11 +5,16 @@ import sys
 import shelve
 import news
 
-new_articles = news.AP_topNews()
-new_articles.extend(news.NYT_mostPopular())
-new_articles.extend(news.NYT_recent())
-new_articles.extend(news.NPR_news())
-	
+new_articles = []
+source_fns = [news.AP_topNews, news.NYT_mostPopular, news.NYT_recent, news.NPR_news]
+
+for src in source_fns:
+	try:
+		new_articles.extend(src())
+	except Exception as e:
+		print "Failed to add new articles"
+		print ">>", e
+
 out = []
 try:
 	db = shelve.open("news.shelf")

@@ -256,9 +256,12 @@ def AP_topNews():
 	]
 	articles = []
 	for c in categories:
-		articles.extend(AP_news(c))
-		print "Fetched AP %d" % c
-		time.sleep(1)
+		try:
+			articles.extend(AP_news(c))
+		except Exception as e:
+			print "Failed to fetch AP %d" % c
+			print "Traceback:", e
+		time.sleep(1) # rate limiting protection
 	return articles
 
 def AP_news(category):
