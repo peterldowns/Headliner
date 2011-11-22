@@ -25,13 +25,14 @@ otherwise, viewtext.com's API is called instead.
 
 ##Todo:##
 
-1. Start actually creating timestamps on articles
-2. Add more sources
-3. Start filtering the news to show headlines that it thinks I would like
-4. Change fetcher cronjob to a worker process
+1. Make /viewtext return JSON and dynamically set the page content
+2. Start actually creating timestamps on articles
+3. Add more sources
+4. Start filtering the news to show headlines that it thinks I would like
+5. Change fetcher cronjob to a worker process
 	* right now, there are weird problems with the python env (?)
-5. Improve the reading interface
-6. Better article parsing (don't just rely on viewtext and diffbot)
+6. Improve the reading interface
+7. Better article parsing (don't just rely on viewtext and diffbot)
 	* maybe use a custom BeautifulSoup scraper (?)
-7. Add user authentication (let people other than me use it?)
+8. Add user authentication (let people other than me use it?)
 	* maybe not - check the developer license terms

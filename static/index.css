@@ -5,36 +5,13 @@ html {
 	font-weight: 300;
 	font-size: 25px;
 }
-.bg_main {
-	background: url(paper.jpg) no-repeat fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-.bg_reader {
-	/*background: url(grain.jpg) repeat 0 0;*/
-	background-color: #fff;
-}
 
-@media screen and (max-device-width: 480px) {
-body {
-	height: 100%;
-	width: 100%;
-	overflow-x: auto;
-	overflow-y: hidden;
-	padding: 10px;
-}
-}
-
-
-@media screen and (min-device-width: 1000px){
 /* Fill the page with a body, allowing a custom scrollbar */
-body {
+#wrapper {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	bottom: 0px;
+	bottom: 10px;
 	right: 0px;
 	padding: 10px;
 	overflow-x: auto;
@@ -42,42 +19,63 @@ body {
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar {
+#wrapper::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
 }
-::-webkit-scrollbar-button:start:decrement,
-::-webkit-scrollbar-button:end:increment  {
+#wrapper::-webkit-scrollbar-button:start:decrement,
+#wrapper::-webkit-scrollbar-button:end:increment  {
 	display: none;
 	height: 30px;
 	display: block;
 	background-color: transparent;
 }
-::-webkit-scrollbar-track-piece  {
+#wrapper::-webkit-scrollbar-track-piece  {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
-::-webkit-scrollbar-track {
+#wrapper::-webkit-scrollbar-track {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
-::-webkit-scrollbar-thumb {
+#wrapper::-webkit-scrollbar-thumb {
 	width: auto;
 	background-color: rgba(0,0,0,0.3);
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
-}
 
+#pageTitle {
+	background: #fff;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: 300px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	text-align: center;
+	font-size: 40px;
+}
+#divider {
+	position: absolute;
+	top: 51px;
+	left: 0px;
+	right: 0px;
+	height: 1px;
+	background: #000;
+}
 /* This is the main div that holds all of our article headlines */
 #content, #text {
-	padding: 10px;
-	height: 100%; /* Fill the screen */
+	position: absolute;
+	margin: 10px;
+	padding: 5px;
+	bottom: 5px;
+	top: 51px;
 	width: auto;
 }
 #text {
 	/*background: url(grain.jpg) repeat 0 0;*/
-	border-radius: 10px;
 	color: #000;
 	font-size: 20px;
 	font-family: "Times New Roman", "Times", serif;
@@ -85,13 +83,12 @@ body {
 
 /* Every article is kept inside a .article div. */
 .article {
-	background-color:rgba(256,256,256,0);
-	color: #555;
+	background-color:rgba(0,0,0,.1);
 	margin: 10px;
 	padding: 5px;
 	border-radius: 5px;
 	-webkit-transition-property: color, background; 
-	-webkit-transition-duration: .5s, .5s; 
+	-webkit-transition-duration: .2s, .2s; 
 	-webkit-transition-timing-function: linear, ease-in;
 }
 
@@ -165,4 +162,18 @@ img {
 	max-width: 262px;
 	height: auto;
 	width: auto;
+}
+.bg_main {
+	background: url(paper.jpg) no-repeat fixed;
+	background-color: #aaa;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.bg_reader {
+	/*background: url(grain.jpg) repeat 0 0;*/
+	/*background-color: #fff;*/
+	background: url(grain.jpg) repeat 0.0;
+	background: rgba(256,256,256,.2) no-repeat fixed;
 }
