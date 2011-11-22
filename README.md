@@ -38,5 +38,8 @@ otherwise, viewtext.com's API is called instead.
 * Improve the reading interface
 * Better article parsing (don't just rely on viewtext and diffbot)
 	* maybe use a custom BeautifulSoup scraper (?)
+	* diffbot
+	* readitlater api
+	* good overview of links: http://tomazkovacic.com/blog/56/list-of-resources-article-text-extraction-from-html-documents/
 * Add user authentication (let people other than me use it?)
 	* maybe not - check the developer license terms
