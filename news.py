@@ -13,10 +13,7 @@ def cleanHTML(html):
 	for tag in soup.findAll(True):
 		if tag.name not in VALID_TAGS:
 			tag.extract()
-	# now delete all HTML comments (<!-- comment -->)
-	comments = soup.findAll(a=lambda a:isinstance(a, BeautifulSoup.Comment))
-
-	[comment.extract() for comment in comments] # extracts each comment
+	
 	return soup.renderContents()
 
 def cleanText(text):
@@ -81,7 +78,7 @@ def viewtext(url):
 	#url = data.get("responseUrl")
 	content = data.get("content", "")
 	title = data.get("title", "")
-	return (title, url, cleanHTML(content))
+	return (title, url, content)
 	#debug = "<br>DEBUG<br>Url: %s<br>Request: %s<br>Response: %s<br>Data: %s"
 	#debug = debug % (str(url), str(req_string), str(resp), str(data))
 	#return (title, url, content, debug)
