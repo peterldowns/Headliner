@@ -258,7 +258,7 @@ def AP_topNews():
 		except Exception as e:
 			print "Failed to fetch AP %d" % c
 			print "Traceback:", e
-		time.sleep(1) # rate limiting protection
+		time.sleep(2) # rate limiting protection
 	return articles
 
 def AP_news(category):
