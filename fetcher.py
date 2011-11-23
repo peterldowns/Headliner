@@ -44,6 +44,6 @@ for a in new_articles:
 db['articles']	= out
 	
 cur_time = time.asctime(time.localtime(time.time()))
-print >> sys.stderr, "@ %s: fetched articles=%d, new articles=%d" % (cur_time, len(out), added)
+#print >> sys.stderr, "@ %s: fetched articles=%d, new articles=%d" % (cur_time, len(out), added)
 db.close()
 sys.exit(0)
