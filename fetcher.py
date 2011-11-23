@@ -10,8 +10,8 @@ if len(sys.argv) == 2:
 	location = sys.argv[1]
 else:
 	print >> sys.stderr, "Did not receive file argument"
-	print >> sys.stderr, "Assuming ~/current/news.shelf is the path"
-	location = "~/current/news.shelf"
+	print >> sys.stderr, "Assuming /home/dotcloud/current/news.shelf is the path"
+	location = "/home/dotcloud/current/news.shelf"
 
 out = []
 try:
