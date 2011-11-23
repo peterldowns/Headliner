@@ -32,9 +32,13 @@ $(document).ready(function(){
 			console.log("request to "+a);
 			$.get(a, function(data){
 				var close = '<center><a class="close" href="#">(close)</a></center>';
-				$("#text").html(data);
-				$("#text").append(close);
-				$("#text").prepend(close);
+				var dict = $.parseJSON(data);
+				//$("#text").html(data);
+				$("#pageTitle").html("<a href=\""+dict.url+"\">"+dict.title+"</a>");
+				$("#pageTitle").append("<a class=\"close\" href=\"\">(close)</a>");
+				$("#text").html(dict['body']);
+				//$("#text").append(close);
+				//$("#text").prepend(close);
 				$(".close").each(function(index, obj){
 					$(obj).click(function(){
 						$("#text").hide().html("");

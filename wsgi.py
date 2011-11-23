@@ -1,3 +1,4 @@
+import json # for returning information on articles
 import news # get the news
 import shelve # load articles
 from bottle import route, request, view, static_file, default_app # web framework
@@ -77,11 +78,13 @@ class index():
 		# otherwise, fetch it again ...
 		print "-> fetching from viewtext.com ..."
 		title, _, body = news.viewtext(url)
+		print "title = %s\nurl = %s\nlen(body)=%d" % (title, url, len(body))
 		out = "<div class=\"headline\">"\
 				 "<h1>"\
 				 "<a href=\"%s\">%s</a>"\
 				 "</h1>"\
 				 "</div>%s" % (url, title, body)
+		out = json.dumps({"title":title, "body":body, "url":url})
 		# ... and save it for next time
 		try:
 			db = shelve.open("news.shelf")
@@ -99,7 +102,7 @@ class index():
 		except: pass
 		else:
 			db.close()
-		
+		print "out = %s" % out
 		return out
 
 	@route("/diffbot", 'GET')
@@ -119,6 +122,6 @@ class index():
 		return header+body
 
 application = default_app()
-#from bottle import debug, run
-#debug(True)
-#run(host='localhost', port=8080)
+from bottle import debug, run
+debug(True)
+run(host='localhost', port=8080)
