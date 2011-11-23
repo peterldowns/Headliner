@@ -5,12 +5,11 @@ import sys
 import shelve
 import news
 
-print sys.argv
 if len(sys.argv) == 2:
 	location = sys.argv[1]
 else:
-	print >> sys.stderr, "Did not receive file argument"
-	print >> sys.stderr, "Assuming /home/dotcloud/current/news.shelf is the path"
+	#print >> sys.stderr, "Did not receive file argument"
+	#print >> sys.stderr, "Assuming /home/dotcloud/current/news.shelf is the path"
 	location = "/home/dotcloud/current/news.shelf"
 
 out = []

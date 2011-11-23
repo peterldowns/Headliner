@@ -4,5 +4,5 @@ chmod +x dc_crontab fetcher.py
 echo "postinstall: chmodded"
 crontab dc_crontab
 echo "postinstall: crontabbed"
-./fetcher.py
+~/current/fetcher.py ~/current/news.shelf
 echo "postinstall: DONE"
