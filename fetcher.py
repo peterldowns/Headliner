@@ -15,9 +15,10 @@ for src in source_fns:
 		print "Failed to add new articles"
 		print ">>", e
 
+location = sys.argv[1]
 out = []
 try:
-	db = shelve.open("news.shelf")
+	db = shelve.open(location)
 	if not db.has_key('articles'):
 		db['articles'] = []
 	out = db['articles']
