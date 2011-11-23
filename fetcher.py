@@ -6,7 +6,12 @@ import shelve
 import news
 
 print sys.argv
-location = sys.argv[1]
+if len(sys.argv) == 2:
+	location = sys.argv[1]
+else:
+	print >> sys.stderr, "Did not receive file argument"
+	print >> sys.stderr, "Assuming ~/current/news.shelf is the path"
+	location = "~/current/news.shelf"
 
 out = []
 try:
@@ -14,9 +19,8 @@ try:
 	if not db.has_key('articles'):
 		db['articles'] = []
 	out = db['articles']
-except:
-	if db:
-		db.close()
+except Exception as e:
+	print "Exception:", e
 	print >> sys.stderr, "COULD NOT LOAD DATABASE news.shelf"
 	sys.exit(0)
 
