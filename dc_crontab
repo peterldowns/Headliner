@@ -1,4 +1,4 @@
 # custom crontab for dotcloud services
 # runs the python news fetcher service in the background
-0-59/5 * * * * ~/env/bin/python ~/current/fetcher.py % ~/current/news.shelf
+0-59/5 * * * * ~/env/bin/python ~/current/fetcher.py % "~/current/news.shelf"
 
