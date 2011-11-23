@@ -1,4 +1,5 @@
 # custom crontab for dotcloud services
 # runs the python news fetcher service in the background
+MAILTO=peterldowns@gmail.com
 0-59/5 * * * * /bin/bash -c "~/env/bin/python ~/current/fetcher.py ~/current/news.shelf"
 
