@@ -29,7 +29,6 @@ otherwise, viewtext.com's API is called instead.
 * Better typography
 	* http://3.7designs.co/blog/2008/06/10-examples-of-beautiful-css-typography-and-how-they-did-it/ (s/:first)
 	* http://www.informationarchitects.jp/en/100e2r/ (s/lineheight)
-* Make /viewtext return JSON and dynamically set the page content
 * Start actually creating timestamps on articles
 * Add more sources
 * Start filtering the news to show headlines that it thinks I would like
