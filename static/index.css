@@ -85,12 +85,13 @@ html {
 
 /* Every article is kept inside a .article div. */
 .article {
-	background-color:rgba(0,0,0,.1);
-	margin: 10px;
-	padding: 5px;
+	/*background-color:rgba(0,0,0,.1);*/
 	border-radius: 5px;
-	-webkit-transition-property: color, background; 
-	-webkit-transition-duration: .2s, .2s; 
+	padding: 5px;
+	margin: 5px;
+	border: 1px dashed rgba(256,256,0,1);
+	-webkit-transition-property: color, border, background; 
+	-webkit-transition-duration: .4s, .4s; 
 	-webkit-transition-timing-function: linear, ease-in;
 }
 
@@ -106,7 +107,7 @@ html {
 }
 
 .article:hover {
-	background-color:rgba(256,256,256,.7);
+	background-color:rgba(256,256,0,.5);
 	color: #000;
 }
 
@@ -114,9 +115,9 @@ html {
 	-webkit-columns: 262px auto;
 	columns: 262px auto;
 
-	-moz-column-gap:1em;
-	-webkit-column-gap:1em;
-	column-gap:1em;
+	-moz-column-gap:5px;
+	-webkit-column-gap:5px;
+	column-gap:5px;
 	/*
 	-moz-column-rule-color #555;
 	-webkit-column-rule-color #555;
@@ -166,8 +167,8 @@ img {
 	width: auto;
 }
 .bg_main {
-	background: url(paper.jpg) no-repeat fixed;
-	background-color: #aaa;
+	/*background: url(paper.jpg) no-repeat fixed;*/
+	background-color: #fff;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
