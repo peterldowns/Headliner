@@ -78,6 +78,7 @@ html {
 }
 #text {
 	color: #000;
+	line-height: 140%; /* better readability */
 	font-size: 20px;
 	font-family: "Times New Roman", "Times", serif;
 }
