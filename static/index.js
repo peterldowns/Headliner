@@ -22,7 +22,7 @@ $(document).ready(function(){
 			$.get("/viewtext?url="+url, function(data){
 				var close = '<a class="close" href="">(close)</a>';
 				var title = '<a href="'+data.url+'">'+data.title+'</a>';
-				$("#pageTitle").html(title);
+				$("#pageTitle").html(title).append(close);
 				$("#text").html(data.body).prepend(close).append(close).fadeIn("slow");
 				$(".close").each(function(index, obj){
 					$(obj).click(function(){
