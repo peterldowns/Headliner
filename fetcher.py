@@ -8,8 +8,6 @@ import news
 if len(sys.argv) == 2:
 	location = sys.argv[1]
 else:
-	#print >> sys.stderr, "Did not receive file argument"
-	#print >> sys.stderr, "Assuming /home/dotcloud/current/news.shelf is the path"
 	location = "/home/dotcloud/current/news.shelf"
 
 out = []
@@ -41,8 +39,5 @@ for a in new_articles:
 		out.append(a)
 		added += 1
 db['articles']	= out
-	
-cur_time = time.asctime(time.localtime(time.time()))
-#print >> sys.stderr, "@ %s: fetched articles=%d, new articles=%d" % (cur_time, len(out), added)
 db.close()
 sys.exit(0)
