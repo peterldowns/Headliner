@@ -27,18 +27,19 @@ class index():
 				db['articles'] = []
 			articles = db['articles']
 		except:
-			articles = [news.Article("error", "error", "error", "error", "error")]
+			articles = [news.Article("Error", "Error", "Error", "Error", "Error")]
 		else:
 			db.close()
 
+
 		# limit the number of articles
-		articles = articles[:-40:-1] # TODO: sort articles by pub date
+		articles = articles[:-50:-1] # TODO: sort articles by pub date
 		# TODO: this *does* do fetch order .... more or less date?
 
-		out = []
 		if not tags:
 			out = articles
 		else:
+			out = []
 			tags = filter(lambda x: len(x), tags.lower().split(','))
 			for a in articles:
 				tagstr = " ".join(a.tags)
@@ -59,32 +60,28 @@ class index():
 	def viewtext():
 		url = request.GET.get('url', "ERROR, please try a different link")
 		print "@viewtext: req for %s" % url
-		articles = []
 		try:
 			db = shelve.open("news.shelf")
 			if not db.has_key('articles'):
 				db['articles'] = []
 			articles = db['articles']
-		except: pass
+		except:
+			articles = []
 		else:
 			db.close()
 		
-		# try to return saved html
+		# try to return saved json
 		for a in articles:
 			if url == a.url and a.html:
 				print "-> returning cached HTML"
 				return a.html
-		
+	
 		# otherwise, fetch it again ...
 		print "-> fetching from viewtext.com ..."
-		title, _, body = news.viewtext(url)
-		print "title = %s\nurl = %s\nlen(body)=%d" % (title, url, len(body))
-		out = "<div class=\"headline\">"\
-				 "<h1>"\
-				 "<a href=\"%s\">%s</a>"\
-				 "</h1>"\
-				 "</div>%s" % (url, title, body)
+		title, _url, body = news.viewtext(url)
 		out = json.dumps({"title":title, "body":body, "url":url})
+		# div class="headline"
+
 		# ... and save it for next time
 		try:
 			db = shelve.open("news.shelf")
@@ -102,24 +99,8 @@ class index():
 		except: pass
 		else:
 			db.close()
-		print "out = %s" % out
-		return out
 
-	@route("/diffbot", 'GET')
-	def diffbot():
-		url = request.GET.get('url', "ERROR, please try a different link")
-		title, url, text = news.diffbot(url)
-		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
-		body = news.htmlFromText(text)
-		return header+body
-	
-	@route("/boilerpipe/", 'GET')
-	def boilerpipe():
-		url = request.GET.get('url', "ERROR, please try a different link")
-		title, url, text = news.boilerpipe(url)
-		header = "<h1><a href=\"%s\">%s</a></h1>" % (url, title)
-		body = news.htmlFromText(text)
-		return header+body
+		return out
 
 application = default_app()
 #from bottle import debug, run

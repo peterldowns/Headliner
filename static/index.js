@@ -6,15 +6,7 @@ function bg_main_off(){
 	$("html").removeClass("bg_main");
 	$("html").addClass("bg_reader");
 }
-function viewtext(url){
-	var a = "http://viewtext.org/api/text?url="+url+"&format=html";
-	$.get(a, function(data){
-		$("content").hide();
-		bg_main_off();
-		$("#text").html(data);
-		$("#text").fadeIn("slow");
-	});
-}
+
 $(document).ready(function(){
 	$("#content").show(); // show the articles
 	$("#text").hide(); // don't show any one article in particular
@@ -22,26 +14,20 @@ $(document).ready(function(){
 	$(".article").each(function(index, obj){
 		$(obj).click(function(e){
 			$("#content").fadeOut("fast");
-			var loadingstr = "<center><div><h1> Loading </h1><img src=\"/static/ajax-loader.gif\" /></div></center>";
-			$("#text").html(loadingstr);
+			var loadingstr = "<h1> Loading </h1><img src=\"/static/ajax-loader.gif\" />";
+			$("#pageTitle").html(loadingstr);
 			$("#content").fadeOut("fast");
 			bg_main_off();
-			$("#text").fadeIn("slow");
 			var url = $(this).attr('url');
-			var a = "/viewtext?url="+url;
-			console.log("request to "+a);
-			$.get(a, function(data){
-				var close = '<center><a class="close" href="#">(close)</a></center>';
-				var dict = $.parseJSON(data);
-				//$("#text").html(data);
-				$("#pageTitle").html("<a href=\""+dict.url+"\">"+dict.title+"</a>");
-				$("#pageTitle").append("<a class=\"close\" href=\"\">(close)</a>");
-				$("#text").html(dict['body']);
-				//$("#text").append(close);
-				//$("#text").prepend(close);
+			$.get("/viewtext?url="+url, function(data){
+				var close = '<a class="close" href="">(close)</a>';
+				var title = '<a href="'+data.url+'">'+data.title+'</a>';
+				$("#pageTitle").html(title);
+				$("#text").html(data.body).prepend(close).append(close).fadeIn("slow");
 				$(".close").each(function(index, obj){
 					$(obj).click(function(){
 						$("#text").hide().html("");
+						$("#pageTitle").html("<h1>Headliner - The Daily News</h1>");
 						bg_main_on();
 						$("#content").fadeIn("slow");
 					});
