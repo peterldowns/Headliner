@@ -23,7 +23,10 @@ $(document).ready(function(){
 				var close = '<a class="close" href="">(close)</a>';
 				var title = '<a href="'+data.url+'">'+data.title+'</a>';
 				$("#pageTitle").html(title).append(close);
-				$("#text").html(data.body).prepend(close).append(close).fadeIn("slow");
+				$("#text").html(data.body)
+				$("#text").prepend(close);
+				$("#text").append(close);
+				$("#text").fadeIn("slow");
 				$(".close").each(function(index, obj){
 					$(obj).click(function(){
 						$("#text").hide().html("");
