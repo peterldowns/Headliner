@@ -1,19 +1,26 @@
 html {
-	overflow: auto; /* Allow custom scrollbar */
-	
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	overflow: auto;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+				 "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+				 sans-serif;
 	font-weight: 300;
 	font-size: 25px;
+	background-color: #fff;
+	/*background: url(paper.jpg) no-repeat fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;*/
 }
 
-/* Fill the page with a body, allowing a custom scrollbar */
+/* Fill the page with a div, allowing a custom scrollbar */
 #wrapper {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	bottom: 10px;
+	bottom: 0px;
 	right: 0px;
-	padding: 10px;
+	margin-bottom: 5px;
 	overflow-x: auto;
 	overflow-y: hidden; /* Don't scroll y, only x */
 }
@@ -36,6 +43,8 @@ html {
 }
 #wrapper::-webkit-scrollbar-track {
 	-webkit-border-radius: 5px;
+	width: auto;
+	background-color: rgba(0,0,0,0.1);
 	border-radius: 5px;
 }
 #wrapper::-webkit-scrollbar-thumb {
@@ -54,6 +63,7 @@ html {
 	left: 0;
 	right: 0;
 	height: 50px;
+	overflow: hidden;
 	text-align: center;
 	font-size: 40px;
 }
@@ -62,8 +72,6 @@ html {
 	font-size: 30px;
 	text-decoration: underline;
 }
-
-
 
 #divider {
 	position: absolute;
@@ -153,32 +161,9 @@ a:hover {
 	color: #FFF;
 	background-color: #6090CF;
 }
-.close a {
-	font-size: 75%;
-	text-decoration: italic;
-	color: #CF9060;
-	background-color: #FFF;
-}
-.close a:hover {
-	background-color: #CF9060;
-	color: #FFF;
-}
+
 img {
 	max-width: 262px;
 	height: auto;
 	width: auto;
-}
-.bg_main {
-	/*background: url(paper.jpg) no-repeat fixed;*/
-	background-color: #fff;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-.bg_reader {
-	/*background: url(grain.jpg) repeat 0 0;*/
-	/*background-color: #fff;*/
-	background: url(grain.jpg) repeat 0.0;
-	background: rgba(256,256,256,.2) no-repeat fixed;
 }
