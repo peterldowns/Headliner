@@ -25,7 +25,10 @@ otherwise, viewtext.com's API is called instead.
 
 ##Todo:##
 
-
+* Error checking on /viewtext ajax
+	* If there's a problem, return the user to the homepage
+* Standardized colors
+	* Find the blue equivalent of the yellow that is being used on the front page
 * Better typography
 	* http://3.7designs.co/blog/2008/06/10-examples-of-beautiful-css-typography-and-how-they-did-it/ (s/:first)
 	* http://www.informationarchitects.jp/en/100e2r/ (s/lineheight)
