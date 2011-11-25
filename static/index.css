@@ -58,6 +58,13 @@ html {
 	font-size: 40px;
 }
 
+#pageTitle a {
+	font-size: 30px;
+	text-decoration: underline;
+}
+
+
+
 #divider {
 	position: absolute;
 	top: 51px;
@@ -146,14 +153,9 @@ a:hover {
 	color: #FFF;
 	background-color: #6090CF;
 }
-h1 a {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-h1 a:hover {
-	color: #6090CF;
-	background-color: #FFF;
-}
 .close a {
+	font-size: 75%;
+	text-decoration: italic;
 	color: #CF9060;
 	background-color: #FFF;
 }

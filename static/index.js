@@ -16,17 +16,15 @@ $(document).ready(function(){
 			$("#content").fadeOut("fast");
 			var loadingstr = "<h1> Loading </h1><img src=\"/static/ajax-loader.gif\" />";
 			$("#pageTitle").html(loadingstr);
-			$("#content").fadeOut("fast");
 			bg_main_off();
 			var url = $(this).attr('url');
-			$.get("/viewtext?url="+url, function(data){
+			$.get("/viewtext?url="+url, function(datastr){
+				var data = $.parseJSON(datastr);
 				var close = '<a class="close" href="">(close)</a>';
 				var title = '<a href="'+data.url+'">'+data.title+'</a>';
+				console.log(data);
 				$("#pageTitle").html(title).append(close);
-				$("#text").html(data.body)
-				$("#text").prepend(close);
-				$("#text").append(close);
-				$("#text").fadeIn("slow");
+				$("#text").html(close+data.body+close).fadeIn("slow");
 				$(".close").each(function(index, obj){
 					$(obj).click(function(){
 						$("#text").hide().html("");
