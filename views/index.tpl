@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="bg_image">
+<html>
 <head>
 	<title>Headliner</title>
 	<link rel="stylesheet" type="text/css" href="/static/index.css" />
