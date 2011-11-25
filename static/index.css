@@ -122,9 +122,9 @@ html {
 	-webkit-columns: 262px auto;
 	columns: 262px auto;
 
-	-moz-column-gap:5px;
-	-webkit-column-gap:5px;
-	column-gap:5px;
+	-moz-column-gap:10px;
+	-webkit-column-gap:10px;
+	column-gap:10px;
 	/*
 	-moz-column-rule-color #555;
 	-webkit-column-rule-color #555;
