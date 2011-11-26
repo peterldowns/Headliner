@@ -23,14 +23,13 @@ except Exception as e:
 
 # assumed that db is real
 new_articles = []
-source_fns = [news.AP_topNews, news.NYT_mostPopular, news.NYT_recent, news.NPR_news, news.HN_frontPage]
+source_fns = [news.AP_topNews, news.NYT_mostPopular, news.NYT_recent, news.NPR_news, news.HN_frontPage, news.TNY_news]
 
 for src in source_fns:
 	try:
 		new_articles.extend(src())
 	except Exception as e:
-		print "Failed to add new articles"
-		print ">>", e
+		pass #print "Failed to add new articles\n>>", e
 
 added = 0
 _urls = map(lambda x: x.url, out)
