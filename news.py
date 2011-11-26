@@ -174,13 +174,11 @@ def TNY_news():
 	
 	articles = []
 	for item in soup.findAll('item'):
-		print "Found an item!"
 		url = str(item.link.string).split("?")[0]
 		title = item.title.string
 		source = "The New Yorker"
 		pub_date = item.pubdate.string
 		tags = str(item.description.string).split('&amp;#160;.')[0].split(' ')
-		print tags
 		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
 		articles.append(a)
 	return articles
