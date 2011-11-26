@@ -167,6 +167,24 @@ def AP_topNews():
 			print "Traceback:", e
 	return articles
 
+def TNY_news():
+	base = "http://www.newyorker.com/services/mrss/feeds/everything.xml"
+	r = requests.get(base)
+	soup = BeautifulSoup.BeautifulStoneSoup(r.content)
+	
+	articles = []
+	for item in soup.findAll('item'):
+		print "Found an item!"
+		url = str(item.link.string).split("?")[0]
+		title = item.title.string
+		source = "The New Yorker"
+		pub_date = item.pubdate.string
+		tags = str(item.description.string).split('&amp;#160;.')[0].split(' ')
+		print tags
+		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		articles.append(a)
+	return articles
+		
 def AP_news(category):
 	""" Gets AP news on a category """
 	count = 5
