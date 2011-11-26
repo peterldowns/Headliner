@@ -87,7 +87,7 @@ def APcats():
 	APkey = AP_keys["breaking-news"]
 	base = "Http://developerapi.ap.org/v2/categories.svc/?apiKey=%s"
 	r = requests.get(base % APkey)
-	soup = BeautifulSoup.BeautifulSoup(r.content, convertEntities=BeautifulSoup.HTML_ENTITIES_)
+	soup = BeautifulSoup.BeautifulSoup(r.content, convertEntities=BeautifulSoup.HTML_ENTITIES)
 	for entry in soup.findAll('entry'):
 		name = str(entry.title.string)
 		id = str(entry.id.string).split(':')[-1]
@@ -170,7 +170,7 @@ def AP_topNews():
 def TNY_news():
 	base = "http://www.newyorker.com/services/mrss/feeds/everything.xml"
 	r = requests.get(base)
-	soup = BeautifulSoup.BeautifulStoneSoup(r.content, convertEntities=BeautifulSoup.HTML_ENTITIES_)
+	soup = BeautifulSoup.BeautifulStoneSoup(r.content, convertEntities=BeautifulSoup.HTML_ENTITIES)
 	
 	articles = []
 	for item in soup.findAll('item'):
@@ -193,7 +193,7 @@ def AP_news(category):
 		"&mediaOption=0&apiKey=%s"
 	reqstr = base % (category, contentOption, count, APkey)
 	r = requests.get(reqstr)
-	soup = BeautifulSoup.BeautifulSoup(r.content, convertEntities=BeautifulSoup.HTML_ENTITIES_)
+	soup = BeautifulSoup.BeautifulSoup(r.content, convertEntities=BeautifulSoup.HTML_ENTITIES)
 
 	articles = []
 	for entry in soup.findAll('entry'):
