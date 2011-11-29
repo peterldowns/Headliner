@@ -1,3 +1,4 @@
 bottle==0.9.7
 requests==0.8.1
 BeautifulSoup==3.2.0
+pymongo
