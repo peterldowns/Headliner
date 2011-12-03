@@ -23,18 +23,18 @@ def getDatabase(db_name, credentials=None):
 	db = connection[db_name]
 	return db
 
-def getCollection(db_name, coll_name):
-	db = getDatabase(db_name)
+def getCollection(db_name, coll_name, credentials=None):
+	db = getDatabase(db_name, credentials)
 	return db[coll_name]
 
-def addArticles(db_name, coll_name, articles):
+def addArticles(db_name, coll_name, articles, credentials=None):
 	# expects articles as an iterable
-	coll = getCollection(db_name, coll_name)
+	coll = getCollection(db_name, coll_name, credentials)
 	return coll.insert(articles)
 
 
-def searchCollection(db_name, coll_name, params=None, sort_params=None):
-	coll = getCollection(db_name, coll_name)
+def searchCollection(db_name, coll_name, params=None, sort_params=None, credentials=None):
+	coll = getCollection(db_name, coll_name, credentials)
 
 	if params:
 		resp = coll.find(params)
@@ -45,5 +45,5 @@ def searchCollection(db_name, coll_name, params=None, sort_params=None):
 		return resp.sort(sort_params)
 	return resp
 
-def getLatest(db_name, coll_name, num):
+def getLatest(db_name, coll_name, num, credentials=None):
 	return searchCollection(db_name, coll_name, sort_params={"$natural":-1}).limit(num)
