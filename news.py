@@ -70,6 +70,16 @@ class Article:
 		self.text = None			# plain text of article
 		self.abstract = None		# 1 line description
 
+def createArticle(url, source, pub_date, tags, title=None):
+	return {
+		"source" : source,
+		"url" : url,
+		"pub_date" : pub_date,
+		"tags" : tags,
+		"title" : title,
+		"html" : None,
+		"value" : None }
+
 NYT_keys = {
 	"most-popular" : "32a8ad498501475cb0fa4abbc04f4e4e:5:61481359",
 	"article-search" : "6e9f5b717ddf385cb182ae1a2c24b28c:6:61481359",
