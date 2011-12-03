@@ -21,7 +21,8 @@ class index():
 	def get(tags=None):
 		try:
 			coll = getCollection("news", "articles")
-			if tags:
+			tags = None # skips tags
+			if tags: # BROKEN - skipped for now
 				print "There are tags!"
 				tags = tags.lower().split(',')
 				can_have = [ {"tags" : t[1:]} for t in tags if t[0] != '^' ]
@@ -30,7 +31,8 @@ class index():
 				articles = coll.find(params)
 			else:
 				print "finding latest articles"
-				articles = coll.find()
+				#articles = coll.find()
+				articles = coll.find().sort({"_id":-1})
 		except:
 			articles = [news.createArticle("Error", "Error", "Error", "Error", "Error")]
 		return {"articles" : articles.limit(50)}
