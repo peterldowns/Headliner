@@ -13,7 +13,6 @@ class index():
 	# serves the main page
 	@route('/favicon.ico', 'GET')
 	def favicon():
-		print 'got the request'
 		return static_file('favicon.ico', root='./static')
 
 	@route('/', 'GET')
