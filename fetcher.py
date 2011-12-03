@@ -9,34 +9,29 @@ def sigterm_handler(signum, frame):
 	sys.exit(0)
 
 def main():
-	import shelve
 	import news
-	if len(sys.argv) == 2:
-		location = sys.argv[1]
-	else:
-		location = "/home/dotcloud/current/news.shelf"
+	from db_wrapper import loadCredentials, getDatabase, getCollection, addArticles
+	try:
+		creds = loadCredentials()
+	except Exception as e:
+		creds = None
+
 	while True:
 		out = []
 		try:
-			db = shelve.open(location)
-			if not db.has_key('articles'):
-				db['articles'] = []
-			out = db['articles']
 			new_articles = []
 			source_fns = [news.NYT_mostPopular, news.NYT_recent, news.NPR_news, news.HN_frontPage, news.TNY_news]
 			for src in source_fns:
 				try:
 					new_articles.extend(src())
-				except Exception as e:
-					pass #print "Failed to add new articles\n>>", e
-			added = 0
-			_urls = map(lambda x: x.url, out)
+				except Exception as e: pass
+			
+			DB_articles = getCollection("news", "articles", creds)
+			
+			_urls = map(lambda x: x.url, DB_articles)
 			for a in new_articles:
 				if not a.url in _urls:
-					out.append(a)
-					added += 1
-			db['articles']	= out
-			db.close()
+					DB_articles.insert(a)
 		except Exception as e:
 			print "Exception:", e
 			print >> sys.stderr, "COULD NOT LOAD DATABASE news.shelf"

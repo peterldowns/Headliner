@@ -1,6 +1,6 @@
 import json # for returning information on articles
 import news # get the news
-import shelve # load articles
+from db_wrapper import * # load articles
 from bottle import route, request, view, static_file, default_app # web framework
 
 class static_files():
@@ -19,87 +19,38 @@ class index():
 	@route('/:tags', 'GET')
 	@view('index')
 	def get(tags=None):
-		# load the articles from a shelf
 		try:
-			db = shelve.open("news.shelf")
-			if not db.has_key('articles'):
-				db['articles'] = []
-			articles = db['articles']
+			DBarticles = getCollection("news", "articles")
+			if tags:
+				tags = tags.lower().split(',')
+				can_have = [ {"tags" : t[1:]} for t in tags if t[0] != '^' ]
+				#cant_have = [ {"tags" : t[1:]} for t in tags if t[0] == '^' ]
+				params = {"$or" : can_have}
+				articles = DBarticles.find(params)
+			else:
+				articles = DBarticles.find()
 		except:
-			articles = [news.Article("Error", "Error", "Error", "Error", "Error")]
-		else:
-			db.close()
-
-
-		# limit the number of articles
-		articles = articles[:-50:-1] # TODO: sort articles by pub date
-		# TODO: this *does* do fetch order .... more or less date?
-
-		if not tags:
-			out = articles
-		else:
-			out = []
-			tags = filter(lambda x: len(x), tags.lower().split(','))
-			for a in articles:
-				tagstr = " ".join(a.tags)
-				do_app = False
-				for t in tags:
-					tmp = t.strip()
-					incl = tmp[0]!='^'
-					if incl and tmp in tagstr:
-						do_app = True
-					if (not incl) and (tmp[1:] in tagstr):
-						do_app = False
-						break
-				if do_app:
-					out.append(a)
-		return dict(articles=out)
+			articles = [news.createArticle("Error", "Error", "Error", "Error", "Error")]
+		return {"articles" : articles}
 	
 	@route('/viewtext', 'GET')
 	def viewtext():
 		url = request.GET.get('url', "ERROR, please try a different link")
-		print "@viewtext: req for %s" % url
 		try:
-			db = shelve.open("news.shelf")
-			if not db.has_key('articles'):
-				db['articles'] = []
-			articles = db['articles']
-		except:
-			articles = []
-		else:
-			db.close()
+			DBarticles = getCollection("news", "articles")
+			match = DBarticles.findOne({"url":url})
+			if match:
+				out = match['html']
+				if not out:
+					title, _url, body = news.viewtext(url)
+					out = json.dumps({"title":title, "body":body, "url":url})
+					match['html'] = out
+					DBarticles.save(match)
+				return  out
+		except Exception as e:
+			print >> sys.stderr, e
 		
-		# try to return saved json
-		for a in articles:
-			if url == a.url and a.html:
-				print "-> returning cached HTML"
-				return a.html
-	
-		# otherwise, fetch it again ...
-		print "-> fetching from viewtext.com ..."
-		title, _url, body = news.viewtext(url)
-		out = json.dumps({"title":title, "body":body, "url":url})
-		# div class="headline"
-
-		# ... and save it for next time
-		try:
-			db = shelve.open("news.shelf")
-			tmp = None
-			if not db.has_key('articles'):
-				tmp = []
-			else:
-				tmp = db['articles']
-			for a in tmp:
-				if a.url == url:
-					a.html = out
-					print "   (cached result for later)"
-					break
-			db['articles'] = tmp
-		except: pass
-		else:
-			db.close()
-
-		return out
+		return {"title":"Error" ,"body":"Error", "url":"Error"}
 
 application = default_app()
 #from bottle import debug, run
