@@ -34,7 +34,7 @@ class index():
 				articles = coll.find()
 		except:
 			articles = [news.createArticle("Error", "Error", "Error", "Error", "Error")]
-		return {"articles" : articles.sort(["$natural", -1]).limit(50)}
+		return {"articles" : articles.sort("$natural", -1).limit(50)}
 	
 	@route('/viewtext', 'GET')
 	def viewtext():
