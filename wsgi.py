@@ -40,7 +40,7 @@ class index():
 		url = request.GET.get('url', "ERROR, please try a different link")
 		try:
 			DBarticles = getCollection("news", "articles")
-			match = DBarticles.findOne({"url":url})
+			match = DBarticles.find_one({"url":url})
 			if match:
 				out = match['html']
 				if not out:
