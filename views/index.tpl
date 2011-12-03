@@ -13,13 +13,13 @@
 <div id="wrapper">
 	<div id="content" class="columns">
 	%for article in articles:
-		<div class="article" url="{{article.url}}" tags="{{", ".join(article.tags)}}">
+		<div class="article" url="{{article['url']}}" tags="{{", ".join(article['tags'])}}">
 			<div class="source">
-				{{article.source}}, {{article.pub_date}}
+				{{article['source']}}, {{article['pub_date']}}
 			</div>
-			{{article.title}}
+			{{article['title']}}
 			<div class="tags">
-				{{", ".join(article.tags)}}
+				{{", ".join(article['tags'])}}
 			</div>
 		</div>
 	%end
