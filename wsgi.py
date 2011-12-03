@@ -1,6 +1,6 @@
 import json # for returning information on articles
 import news # get the news
-from db_wrapper import * # load articles
+from db_wrapper import getCollection # load articles
 from bottle import route, request, view, static_file, default_app # web framework
 
 class static_files():
@@ -20,18 +20,20 @@ class index():
 	@view('index')
 	def get(tags=None):
 		try:
-			DBarticles = getCollection("news", "articles")
+			coll = getCollection("news", "articles")
 			if tags:
+				print "There are tags!"
 				tags = tags.lower().split(',')
 				can_have = [ {"tags" : t[1:]} for t in tags if t[0] != '^' ]
 				#cant_have = [ {"tags" : t[1:]} for t in tags if t[0] == '^' ]
 				params = {"$or" : can_have}
-				articles = DBarticles.find(params)
+				articles = coll.find(params)
 			else:
-				articles = DBarticles.find()
+				print "finding latest articles"
+				articles = coll.find()
 		except:
 			articles = [news.createArticle("Error", "Error", "Error", "Error", "Error")]
-		return {"articles" : articles}
+		return {"articles" : articles.limit(50)}
 	
 	@route('/viewtext', 'GET')
 	def viewtext():

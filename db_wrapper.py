@@ -46,4 +46,4 @@ def searchCollection(db_name, coll_name, params=None, sort_params=None, credenti
 	return resp
 
 def getLatest(db_name, coll_name, num, credentials=None):
-	return searchCollection(db_name, coll_name, sort_params={"$natural":-1}).limit(num)
+	return searchCollection(db_name, coll_name, sort_params=["$natural",-1]).limit(num)

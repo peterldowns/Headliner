@@ -26,13 +26,15 @@ def main():
 					new_articles.extend(src())
 				except Exception as e: pass
 			
-			DB_articles = getCollection("news", "articles", creds).find()
+			coll = getCollection("news", "articles", creds)
+			print "number of old articles: %d" % coll.count()
+			DB_articles = coll.find()
 			
 			added = 0
-			_urls = map(lambda x: x.url, DB_articles)
+			_urls = map(lambda x: x['url'], DB_articles)
 			for a in new_articles:
 				if not a['url'] in _urls:
-					DB_articles.insert(a)
+					coll.insert(a)
 					added += 1
 			print "Added %d new articles" % added
 		except Exception as e:
