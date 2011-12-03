@@ -25,8 +25,6 @@ otherwise, viewtext.com's API is called instead.
 
 ##Todo:##
 
-* Error checking on /viewtext ajax
-	* If there's a problem, return the user to the homepage
 * Standardized colors
 	* Find the blue equivalent of the yellow that is being used on the front page
 * Better typography
@@ -35,8 +33,6 @@ otherwise, viewtext.com's API is called instead.
 * Start actually creating timestamps on articles
 * Add more sources
 * Start filtering the news to show headlines that it thinks I would like
-* Change fetcher cronjob to a worker process
-	* right now, there are weird problems with the python env (?)
 * Improve the reading interface
 * Better article parsing (don't just rely on viewtext and diffbot)
 	* maybe use a custom BeautifulSoup scraper (?)
