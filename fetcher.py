@@ -23,7 +23,7 @@ def main():
 				db['articles'] = []
 			out = db['articles']
 			new_articles = []
-			source_fns = [news.AP_topNews, news.NYT_mostPopular, news.NYT_recent, news.NPR_news, news.HN_frontPage, news.TNY_news]
+			source_fns = [news.NYT_mostPopular, news.NYT_recent, news.NPR_news, news.HN_frontPage, news.TNY_news]
 			for src in source_fns:
 				try:
 					new_articles.extend(src())
