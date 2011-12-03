@@ -28,13 +28,16 @@ def main():
 			
 			DB_articles = getCollection("news", "articles", creds).find()
 			
+			added = 0
 			_urls = map(lambda x: x.url, DB_articles)
 			for a in new_articles:
-				if not a.url in _urls:
+				if not a['url'] in _urls:
 					DB_articles.insert(a)
+					added += 1
+			print "Added %d new articles" % added
 		except Exception as e:
-			print "Exception:", e
-			sys.exit(0)
+			print "Failed to save to database, see stderr logs"
+			print >> sys.stderr, "Exception:", e
 		time.sleep(300) # repeat this command ever 3 minutes
 
 # Bind our callback to the SIGTERM signal and run the daemon
