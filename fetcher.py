@@ -26,7 +26,7 @@ def main():
 					new_articles.extend(src())
 				except Exception as e: pass
 			
-			DB_articles = getCollection("news", "articles", creds)
+			DB_articles = getCollection("news", "articles", creds).find()
 			
 			_urls = map(lambda x: x.url, DB_articles)
 			for a in new_articles:
@@ -34,7 +34,6 @@ def main():
 					DB_articles.insert(a)
 		except Exception as e:
 			print "Exception:", e
-			print >> sys.stderr, "COULD NOT LOAD DATABASE news.shelf"
 			sys.exit(0)
 		time.sleep(300) # repeat this command ever 3 minutes
 
