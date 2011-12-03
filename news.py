@@ -123,7 +123,7 @@ def NPR_get_articles(jresp):
 		tags.extend(story['teaser']['$text'].split(' '))
 		
 		# make the article
-		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
 		
 		articles.append(a)
 	
@@ -189,7 +189,7 @@ def TNY_news():
 		source = "The New Yorker"
 		pub_date = item.pubdate.string
 		tags = str(item.description.string).split('&#160;.')[0].split(' ')
-		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
 		articles.append(a)
 	return articles
 		
@@ -216,7 +216,7 @@ def AP_news(category):
 		tags = []
 		tags.extend([str(cat['label']) for cat in entry.findAll('category')])
 		
-		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
 		if contentOption == 2: # if we get the source text with it, may as well use it
 			entry_content = entry.findAll(attrs={"class":"entry-content"})[0].contents
 			a.html = "".join(map(str, entry_content))
@@ -260,7 +260,7 @@ def NYT_get_articles(jresp):
 		except TypeError as te:
 			pass
 		
-		a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
 		articles.append(a)
 	return articles
 
@@ -299,7 +299,7 @@ def HN_frontPage():
 			title = link['title']
 			pub_date = link['postedAgo']
 			tags = title.split(' ') # lack of tags :(
-			a = Article(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+			a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
 			articles.append(a)
 		except: pass
 	return articles
