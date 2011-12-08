@@ -20,7 +20,7 @@ def main():
 		out = []
 		try:
 			new_articles = []
-			source_fns = [news.NYT_mostPopular, news.NYT_recent, news.NPR_news, news.HN_frontPage, news.TNY_news]
+			source_fns = [news.NYT_recent, news.NPR_news, news.HN_frontPage, news.TNY_news, news.NYT_mostPopular]
 			for src in source_fns:
 				try:
 					new_articles.extend(src())
@@ -35,6 +35,7 @@ def main():
 			for a in new_articles:
 				if not a['url'] in _urls:
 					coll.insert(a)
+					print "added new article at %d" % a['timestamp']
 					added += 1
 			print "Added %d new articles" % added
 		except Exception as e:
