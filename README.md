@@ -25,6 +25,11 @@ otherwise, viewtext.com's API is called instead.
 
 ##Todo:##
 
+
+* Start actually creating and using timestamps on articles
+	* Timestamps are done :) but not used
+* Change DB to timestamp-indexed, unlimited size (instead of capped collection)
+
 * Unicode encoding
 	* see http://farmdev.com/talks/unicode/
 * Standardized colors
@@ -32,7 +37,6 @@ otherwise, viewtext.com's API is called instead.
 * Better typography
 	* http://3.7designs.co/blog/2008/06/10-examples-of-beautiful-css-typography-and-how-they-did-it/ (s/:first)
 	* http://www.informationarchitects.jp/en/100e2r/ (s/lineheight)
-* Start actually creating timestamps on articles
 * Add more sources
 * Start filtering the news to show headlines that it thinks I would like
 * Improve the reading interface
