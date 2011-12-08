@@ -1,7 +1,8 @@
 import json # for returning information on articles
 import news # get the news
 from db_wrapper import getCollection # load articles
-from bottle import route, request, view, static_file, default_app # web framework
+from bottle import route, request, view, static_file, default_app, debug # web framework
+debug(True)
 
 class static_files():
 	# serves any static files
