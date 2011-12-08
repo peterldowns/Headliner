@@ -56,7 +56,6 @@ class index():
 		
 		return {"title":"Error" ,"body":"Error", "url":"Error"}
 
-debug(True)
 application = default_app()
 #from bottle import debug, run
 #debug(True)
