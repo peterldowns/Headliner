@@ -21,7 +21,6 @@ class index():
 	def get(tags=None):
 		try:
 			coll = getCollection("news", "articles")
-			coll.ensure_index("timestamp") # index on `timestamp`
 			tags = None # skips tags
 			if tags: # BROKEN - skipped for now
 				print "There are tags!"
