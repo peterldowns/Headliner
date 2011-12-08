@@ -35,7 +35,6 @@ def main():
 			for a in new_articles:
 				if not a['url'] in _urls:
 					coll.insert(a)
-					print "added new article at %d" % a['timestamp']
 					added += 1
 			print "Added %d new articles" % added
 		except Exception as e:
