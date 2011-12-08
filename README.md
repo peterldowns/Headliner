@@ -25,6 +25,8 @@ otherwise, viewtext.com's API is called instead.
 
 ##Todo:##
 
+* Unicode encoding
+	* see http://farmdev.com/talks/unicode/
 * Standardized colors
 	* Find the blue equivalent of the yellow that is being used on the front page
 * Better typography
