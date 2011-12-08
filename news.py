@@ -59,11 +59,13 @@ def viewtext(url):
 	return (title, url, content)
 	
 def createArticle(url, source, pub_date, tags, title=None):
+	tx = time.time()*1000
+	print tx
 	return {
 		"source" : source,
 		"url" : url,
 		"pub_date" : pub_date,
-		"timestamp" : time.time()*1000, # timestamp in ms since epoch, for JS compatibility
+		"timestamp" : tx, # timestamp in ms since epoch, for JS compatibility
 		"tags" : tags,
 		"title" : title,
 		"html" : None,
