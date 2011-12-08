@@ -2,7 +2,7 @@ import requests # fetch articles
 import urllib # escape requests
 import json # parse result
 import BeautifulSoup, re # html cleaning
-import time # delay AP requests
+import time # delay AP requests, make timestamps
 
 
 def cleanText(text):
@@ -58,23 +58,12 @@ def viewtext(url):
 	title = data.get("title", "")
 	return (title, url, content)
 	
-class Article:
-	def __init__(self, url, source, pub_date, tags, title=None):
-		""" Set up an article structure """
-		self.url = url				# string, url, "http://nytimes.com/article/baghdadexplosion"
-		self.source = source		# string, source, "New York Times" 
-		self.pub_date = pub_date 	# string, publication date, "11-11-11"
-		self.tags = tags			# list of strings, tags, ["bomb", "baghdad", "explosion"]
-		self.title = title 			# article title
-		self.html = None			# html of article
-		self.text = None			# plain text of article
-		self.abstract = None		# 1 line description
-
 def createArticle(url, source, pub_date, tags, title=None):
 	return {
 		"source" : source,
 		"url" : url,
 		"pub_date" : pub_date,
+		"timestamp" : time.time()*1000, # timestamp in ms since epoch, for JS compatibility
 		"tags" : tags,
 		"title" : title,
 		"html" : None,
