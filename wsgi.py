@@ -21,6 +21,7 @@ class index():
 	def get(tags=None):
 		try:
 			coll = getCollection("news", "articles")
+			coll.ensure_index("timestamp") # index on `timestamp`
 			tags = None # skips tags
 			if tags: # BROKEN - skipped for now
 				print "There are tags!"
@@ -34,7 +35,7 @@ class index():
 				articles = coll.find()
 		except:
 			articles = [news.createArticle("Error", "Error", "Error", "Error", "Error")]
-		return {"articles" : articles.sort("$natural", -1).limit(50)}
+		return {"articles" : articles.sort("timestamp", -1).limit(50)}
 	
 	@route('/viewtext', 'GET')
 	def viewtext():
