@@ -26,10 +26,6 @@ otherwise, viewtext.com's API is called instead.
 ##Todo:##
 
 
-* Start actually creating and using timestamps on articles
-	* Timestamps are done :) but not used
-* Change DB to timestamp-indexed, unlimited size (instead of capped collection)
-
 * Unicode encoding
 	* see http://farmdev.com/talks/unicode/
 * Standardized colors
