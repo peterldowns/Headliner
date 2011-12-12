@@ -12,17 +12,6 @@ body {
 	overflow-y: hidden;
 }
 
-/* #wrapper {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	bottom: 0px;
-	right: 0px;
-	margin-bottom: 5px;
-	overflow-x: auto;
-	overflow-y: hidden;
-} */
-
 #pageTitle {
 	position: fixed;
 	top: 0px;
@@ -33,7 +22,7 @@ body {
 
 	font-family: "Times New Roman", Times, serif;
 	
-	overflow: hidden;
+	text-overflow: ellipsis;
 	text-align: center;
 	width: auto;
 	font-size: 25px;
