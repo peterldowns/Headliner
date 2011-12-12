@@ -109,7 +109,7 @@ body {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: lighter;
 	font-size: 10px;
-
+	line-height: 100%;
 }
 .article .source {
 	text-decoration: underline;
