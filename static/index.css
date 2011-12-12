@@ -26,6 +26,8 @@ body {
 	text-align: center;
 	width: auto;
 	font-size: 25px;
+
+	border-bottom: 1px solid #000;
 }
 
 #pageTitle a {
