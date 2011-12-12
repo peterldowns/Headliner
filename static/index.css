@@ -22,7 +22,12 @@ body {
 	height: 49px;
 	border-bottom: 1px solid #000;
 
-	font-family: "Times New Roman", Times, serif;
+	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
+	text-decoration: none;
+	letter-spacing: -1px;
+	font-size: 41px;
+	line-height: 49px;
+
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -33,16 +38,15 @@ body {
 }
 
 #pageTitle a {
-	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
-	font-size: 41px;
-	line-height: 49px;
-	letter-spacing: -1px;
-	color: #444;
 	text-decoration: none;
+	background-color: inherit;
+	color: inherit;
 }
 #pageTitle a:hover {
-	color: #888;
-	background-color: #444;
+	color: #6090CF;
+}
+#pageTitle:hover {
+	background-color: #DDD;
 }
 
 /* These hold headlines and body text */
@@ -131,7 +135,7 @@ a {
 }
 a:hover {
 	color: #FFF;
-	background-color: #6090CF;
+	/*background-color: #6090CF;*/
 }
 
 img {
