@@ -64,6 +64,15 @@ body {
 	z-index: 1;
 }
 
+#content {
+	font-family: "Hoefler Text", Georgia, "Times New Roman", serif;
+	font-weight: normal;
+	font-size: 50px;
+	letter-spacing: -1px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
 #text {
 	color: #000;
 	font-size: 30px;
