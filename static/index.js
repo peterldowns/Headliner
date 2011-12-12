@@ -13,8 +13,8 @@ $(document).ready(function(){
 					var data = $.parseJSON(response);
 					var close = '<a class="close" href="">(close)</a>';
 					var title = '<a href="'+data.url+'">'+data.title+'</a>';
-					$("#pageTitle").html(title);
-					$("#pageTitle").append(close);
+					$("#pageTitle").html(close);
+					$("#pageTitle").append(title);
 					$("#text").html(close+data.body+close).fadeIn("fast");
 				},
 				error: function(response){
