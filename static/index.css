@@ -78,7 +78,7 @@ body {
 	line-height: 140%; /* better readability */
 	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
 	text-decoration: none;
-	letter-spacing: -1px;
+	letter-spacing: 2px;
 }
 #text:first-letter { /* TODO: remove <close> div, because it gets capitalized */
 	font-size: 40px;
