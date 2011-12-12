@@ -24,17 +24,18 @@ body {
 } */
 
 #pageTitle {
-	position: absolute;
+	position: fixed;
 	top: 0px;
 	left: 0px;
 	right: 0px;
 	height: 50px;
-	z-index: 3;
+	z-index: 2;
 
 	font-family: "Times New Roman", Times, serif;
 	
 	overflow: hidden;
 	text-align: center;
+	width: auto;
 	font-size: 25px;
 }
 
@@ -51,6 +52,7 @@ body {
 	right: 0px;
 	bottom: 0px;
 	
+	z-index: 1;
 	width: auto;
 }
 
