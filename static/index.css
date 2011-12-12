@@ -95,24 +95,19 @@ body {
 
 .columns {
 	-webkit-columns: 262px auto;
-	-moz-columns: 262px auto;
-	columns: 262px auto;
+	columns: auto 262px;
 
 	-webkit-column-gap:10px;
-	-moz-column-gap:10px;
 	column-gap:10px;
 	
 	/*
 	-webkit-column-rule-color #555;
-	-moz-column-rule-color #555;
 	column-rule-color #555;
 
 	-webkit-column-rule-width:1px;
-	-moz-column-rule-width:1px;
 	column-rule-width:1px;
 
 	-webkit-column-rule-style:solid;
-	-moz-column-rule-style:solid;
 	column-rule-style:solid:
 	*/
 }
