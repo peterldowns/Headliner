@@ -58,19 +58,22 @@ body {
 	bottom: 0px;
 	width: auto;
 
+	padding-left: 10px;
+	padding-right: 10px;
+
 	z-index: 1;
 }
 
 #text {
 	color: #000;
-	font-size: 100%;
+	font-size: 30px;
 	line-height: 140%; /* better readability */
 	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
 	text-decoration: none;
 	letter-spacing: -1px;
 }
-#text:first-letter {
-	font-size: 120%;
+#text:first-letter { /* TODO: remove <close> div, because it gets capitalized */
+	font-size: 45px;
 	font-family: "Adobe Caslon Pro", "Hoefler Text", inherit;
 	text-transform: uppercase;
 }
