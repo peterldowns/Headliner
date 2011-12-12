@@ -27,7 +27,10 @@ body {
 	letter-spacing: -1px;
 	font-size: 41px;
 	line-height: 49px;
-
+	
+	color: #000;
+	background-color: #EEE;
+	
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -45,9 +48,6 @@ body {
 #pageTitle a:hover {
 	color: #6090CF;
 }
-#pageTitle:hover {
-	background-color: #DDD;
-}
 
 /* These hold headlines and body text */
 #content, #text {
@@ -63,9 +63,16 @@ body {
 
 #text {
 	color: #000;
+	font-size: 100%;
 	line-height: 140%; /* better readability */
-	font-size: 20px;
-	font-family: "Times New Roman", "Times", serif;
+	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
+	text-decoration: none;
+	letter-spacing: -1px;
+}
+#text:first-letter {
+	font-size: 120%;
+	font-family: "Adobe Caslon Pro", "Hoefler Text", inherit;
+	text-transform: uppercase;
 }
 
 /* Every article is kept inside a .article div. */
