@@ -65,24 +65,25 @@ body {
 }
 
 #content {
-	font-family: "Hoefler Text", Georgia, "Times New Roman", serif;
-	font-weight: normal;
-	font-size: 50px;
-	letter-spacing: -1px;
-	text-align: center;
+	font-family: "Lucida Grande", Tacoma;
+	font-weight: lighter;
+	font-variant: normal;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-align: center!important;
 	text-transform: uppercase;
 }
 
 #text {
 	color: #000;
-	font-size: 30px;
+	font-size: 20px;
 	line-height: 140%; /* better readability */
 	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
 	text-decoration: none;
 	letter-spacing: -1px;
 }
 #text:first-letter { /* TODO: remove <close> div, because it gets capitalized */
-	font-size: 45px;
+	font-size: 40px;
 	font-family: "Adobe Caslon Pro", "Hoefler Text", inherit;
 	text-transform: uppercase;
 }
