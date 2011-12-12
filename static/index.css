@@ -93,12 +93,18 @@ body {
 	color: #000;
 }
 
-.columns {
-	-webkit-columns: 262px auto;
-	-moz-columns: auto 262px;
+.columns {	
+	-webkit-column-count: auto;
+	-moz-column-count: auto;
+	column-count: auto;
+
+	-webkit-column-width: 262px;
+	-moz-column-width: 262px;
+	column-width: 262px;
 
 	-webkit-column-gap:10px;
 	-moz-column-gap:10px;
+	column-gap: 10px;
 	
 	/*
 	-webkit-column-rule-color #555;
