@@ -4,7 +4,6 @@ $(document).ready(function(){
 	$(".article").each(function(index, obj){
 		$(obj).click(function(e){
 			$("#content").fadeOut("fast");
-			$("#wrapper").scrollLeft(0);
 			$("#text").html("<h1>Loading</h1><img src='/static/ajax-loader.gif'/>").show();
 			var url = $(this).attr('url');
 			$.ajax({

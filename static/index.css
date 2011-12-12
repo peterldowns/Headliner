@@ -1,20 +1,18 @@
 html {
-	overflow: auto;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
 				 "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
 				 sans-serif;
-	font-weight: 300;
 	font-size: 25px;
+	font-color: #000;
 	background-color: #fff;
-	/*background: url(paper.jpg) no-repeat fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;*/
 }
 
-/* Fill the page with a div, allowing a custom scrollbar */
-#wrapper {
+body {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+/* #wrapper {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -22,105 +20,74 @@ html {
 	right: 0px;
 	margin-bottom: 5px;
 	overflow-x: auto;
-	overflow-y: hidden; /* Don't scroll y, only x */
-}
-
-/* Custom scrollbar */
-#wrapper::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
-}
-#wrapper::-webkit-scrollbar-button:start:decrement,
-#wrapper::-webkit-scrollbar-button:end:increment  {
-	display: none;
-	height: 30px;
-	display: block;
-	background-color: transparent;
-}
-#wrapper::-webkit-scrollbar-track-piece  {
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
-#wrapper::-webkit-scrollbar-track {
-	-webkit-border-radius: 5px;
-	width: auto;
-	background-color: rgba(0,0,0,0.1);
-	border-radius: 5px;
-}
-#wrapper::-webkit-scrollbar-thumb {
-	width: auto;
-	background-color: rgba(0,0,0,0.3);
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
+	overflow-y: hidden;
+} */
 
 #pageTitle {
-	background: #fff;
-	font-family: "Times New Roman", Times, serif;
-	font-weight: 300px;
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
+	top: 0px;
+	left: 0px;
+	right: 0px;
 	height: 50px;
+	z-index: 3;
+
+	font-family: "Times New Roman", Times, serif;
+	
 	overflow: hidden;
 	text-align: center;
-	font-size: 40px;
+	font-size: 25px;
 }
 
 #pageTitle a {
-	font-size: 30px;
+	font-size: 25px;
 	text-decoration: underline;
 }
 
-#divider {
+/* These hold headlines and body text */
+#content, #text {
 	position: absolute;
 	top: 51px;
 	left: 0px;
 	right: 0px;
-	height: 1px;
-	background: #000;
-}
-/* This is the main div that holds all of our article headlines */
-#content, #text {
-	position: absolute;
-	margin: 10px;
-	padding: 5px;
-	bottom: 5px;
-	top: 51px;
 	bottom: 0px;
+	
 	width: auto;
 }
+
 #text {
 	color: #000;
 	line-height: 140%; /* better readability */
-	font-size: 20px;
+	font-size: 100%; /* better readability */
 	font-family: "Times New Roman", "Times", serif;
 }
 
 /* Every article is kept inside a .article div. */
 .article {
-	/*background-color:rgba(0,0,0,.1);*/
 	border-radius: 5px;
 	padding: 5px;
 	margin: 5px;
-	border: 1px dashed rgba(256,256,0,1);
+	border: 1px dashed rgba(0,0,0,1);
+	
 	-webkit-transition-property: color, border, background; 
+	-moz-transition-property: color, border, background;
+	transition-property: color, border, background;
 	-webkit-transition-duration: .4s, .4s; 
+	-moz-transition-property: .4s, .4s;
+	transition-property: .4s, .4s;
 	-webkit-transition-timing-function: linear, ease-in;
+	-moz-transition-timing-function: linear, ease-in;
+	transition-timing-function: linear, ease-in;
 }
 
 /* Style how the source and pub date looks for each article */
 .article .source {
 	font-size: 12px;
 	font-style: italic;
-	/* text-decoration: underline; */
 }
 .article .tags {
 	font-size: 10px;
 	text-decoration: underline;
 }
-
 .article:hover {
 	background-color:rgba(256,256,0,.5);
 	color: #000;
@@ -128,22 +95,24 @@ html {
 
 .columns {
 	-webkit-columns: 262px auto;
+	-moz-columns: 262px auto;
 	columns: 262px auto;
 
-	-moz-column-gap:10px;
 	-webkit-column-gap:10px;
+	-moz-column-gap:10px;
 	column-gap:10px;
+	
 	/*
-	-moz-column-rule-color #555;
 	-webkit-column-rule-color #555;
+	-moz-column-rule-color #555;
 	column-rule-color #555;
 
-	-moz-column-rule-width:1px;
 	-webkit-column-rule-width:1px;
+	-moz-column-rule-width:1px;
 	column-rule-width:1px;
 
-	-moz-column-rule-style:solid;
 	-webkit-column-rule-style:solid;
+	-moz-column-rule-style:solid;
 	column-rule-style:solid:
 	*/
 }
@@ -153,7 +122,6 @@ a {
 	padding: 2px;
 	margin-left: 3px;
 	margin-right: 3px;
-	
 	background-color: #FFF;
 	color: #6090CF;
 }

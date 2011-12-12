@@ -58,6 +58,6 @@ class index():
 		return {"title":"Error" ,"body":"Error", "url":"Error"}
 
 application = default_app()
-#from bottle import debug, run
-#debug(True)
-#run(host='localhost', port=8080)
+from bottle import debug, run
+debug(True)
+run(host='localhost', port=8080)
