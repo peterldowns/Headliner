@@ -23,20 +23,18 @@ body {
 	border-bottom: 1px solid #000;
 
 	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
-	text-decoration: none;
-	letter-spacing: -1px;
+	font-size: 25px;
 	font-size: 41px;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	text-align: center;
+	white-space: nowrap;
+	letter-spacing: -1px;
 	line-height: 49px;
 	
 	color: #000;
-	background-color: #EEE;
 	
-	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis;
-	text-align: center;
-	font-size: 25px;
-
 	z-index: 2;
 }
 
@@ -66,7 +64,7 @@ body {
 
 #content {
 	font-family: "Lucida Grande", Tacoma;
-	font-weight: lighter;
+	font-weight: bolder;
 	font-variant: normal;
 	font-size: 20px;
 	letter-spacing: 1px;
@@ -93,7 +91,7 @@ body {
 	border-radius: 5px;
 	padding: 5px;
 	margin: 5px;
-	border: 1px dashed rgba(0,0,0,1);
+	/*border: 1px dashed rgba(0,0,0,1);*/
 	
 	-webkit-transition-property: color, border, background; 
 	-moz-transition-property: color, border, background;
@@ -108,11 +106,11 @@ body {
 
 /* Style how the source and pub date looks for each article */
 .article .source {
-	font-size: 12px;
+	font-size: 10px;
 	font-style: italic;
 }
 .article .tags {
-	font-size: 10px;
+	font-size: 8px;
 	text-decoration: underline;
 }
 .article:hover {
