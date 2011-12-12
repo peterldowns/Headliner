@@ -57,7 +57,7 @@ body {
 #text {
 	color: #000;
 	line-height: 140%; /* better readability */
-	font-size: 100%; /* better readability */
+	font-size: 20px;
 	font-family: "Times New Roman", "Times", serif;
 }
 
@@ -95,10 +95,10 @@ body {
 
 .columns {
 	-webkit-columns: 262px auto;
-	columns: auto 262px;
+	-moz-columns: auto 262px;
 
 	-webkit-column-gap:10px;
-	column-gap:10px;
+	-moz-column-gap:10px;
 	
 	/*
 	-webkit-column-rule-color #555;
