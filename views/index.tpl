@@ -13,7 +13,7 @@
 	%for article in articles:
 		<div class="article" url="{{article['url']}}" ts="{{article['timestamp']}}" tags="{{", ".join(article['tags'])}}">
 			<div class="source">
-				{{article['source']}}, {{article['pub_date']}}
+				{{article['source']}}
 			</div>
 			{{article['title']}}
 			<div class="tags">

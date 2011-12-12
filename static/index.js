@@ -2,6 +2,15 @@ $(document).ready(function(){
 	$("#content").show(); // show the articles
 	$("#text").hide(); // don't show any one article in particular
 	$(".article").each(function(index, obj){
+		var timestamp = $(obj).attr('ts');
+		var realdate = new Date();
+		realdate.setTime(timestamp);
+		var datestr = realdate.toUTCTime();
+		var source = $(obj).find('.source');
+		var oldsource = source.text();
+		var newsource = oldsource+" "+datestr;
+		source.html(newsource);
+
 		$(obj).click(function(e){
 			$("#content").fadeOut("fast");
 			$("#text").html("<h1>Loading</h1><img src='/static/ajax-loader.gif'/>").show();
