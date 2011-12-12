@@ -23,7 +23,6 @@ body {
 	border-bottom: 1px solid #000;
 
 	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
-	font-size: 25px;
 	font-size: 41px;
 	text-decoration: none;
 	text-overflow: ellipsis;
@@ -64,8 +63,9 @@ body {
 
 #content {
 	font-family: "Lucida Grande", Tacoma;
-	font-weight: bolder;
+	font-weight: normal;
 	font-variant: normal;
+	line-height: 140%;
 	font-size: 20px;
 	letter-spacing: 1px;
 	text-align: center!important;
@@ -105,13 +105,17 @@ body {
 }
 
 /* Style how the source and pub date looks for each article */
-.article .source {
+.article .source, .article .tags {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: lighter;
 	font-size: 10px;
-	font-style: italic;
+
+}
+.article .source {
+	text-decoration: underline;
 }
 .article .tags {
-	font-size: 8px;
-	text-decoration: underline;
+	font-style: italic;
 }
 .article:hover {
 	background-color:rgba(256,256,0,.5);
