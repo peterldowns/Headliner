@@ -144,9 +144,9 @@ img {
 
 .close {
 	position: fixed;
-	top:5px;
+	top:0px;
 	left:5px;
-	font-size:20px;
+	font-size:30px;
 	color: rgba(51, 201, 255, 1);
 	z-index: 1000000;
 }
