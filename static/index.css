@@ -78,7 +78,6 @@ body {
 	line-height: 140%; /* better readability */
 	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
 	text-decoration: none;
-	letter-spacing: 2px;
 }
 #text:first-letter { /* TODO: remove <close> div, because it gets capitalized */
 	font-size: 40px;
@@ -153,12 +152,8 @@ a {
 	padding: 2px;
 	margin-left: 3px;
 	margin-right: 3px;
-	background-color: #FFF;
-	color: #6090CF;
-}
-a:hover {
 	color: #FFF;
-	/*background-color: #6090CF;*/
+	background-color: #6090CF;
 }
 
 img {
