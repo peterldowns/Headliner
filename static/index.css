@@ -131,7 +131,7 @@ body {
 	
 }
 
-.close a{
+a .close {
 	font-size: 10px;
 	color: red;
 }
