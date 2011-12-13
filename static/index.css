@@ -39,9 +39,10 @@ body {
 
 #pageTitle a {
 	text-decoration: none;
+	color: #000;
 }
 #pageTitle a:hover {
-	color: rbga(51, 102, 255, 1);
+	color: rbga(51, 102, 255, .5);
 }
 
 /* These hold headlines and body text */
@@ -131,12 +132,8 @@ body {
 }
 
 a {
-	border-radius: 3px;
-	color: rgba(51, 102, 255, 1);
+	color: rgba(51, 102, 255, .5);
 	text-decoration: none;
-	margin-left: 3px;
-	margin-right: 3px;
-	padding: 2px;
 }
 
 img {
