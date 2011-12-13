@@ -20,8 +20,8 @@ $(document).ready(function(){
 					var data = $.parseJSON(response);
 					var close = '<a class="close" href="">(close)</a>';
 					var title = '<a href="'+data.url+'">'+data.title+'</a>';
-					$("#pageTitle").html(close);
-					$("#pageTitle").append(title);
+					$("#pageTitle").html(title);
+					$("#pageTitle").append(close);
 					$("#text").html(data.body).fadeIn("fast");
 				},
 				error: function(response){
