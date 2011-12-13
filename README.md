@@ -30,9 +30,8 @@ otherwise, viewtext.com's API is called instead.
 	* see http://farmdev.com/talks/unicode/
 * Standardized colors
 	* Find the blue equivalent of the yellow that is being used on the front page
-* Better typography
-	* http://3.7designs.co/blog/2008/06/10-examples-of-beautiful-css-typography-and-how-they-did-it/ (s/:first)
-	* http://www.informationarchitects.jp/en/100e2r/ (s/lineheight)
+* ONE (1) close button, in the upper left corner of the screen.
+* Keyboard shortcuts (??? next article, close, back to home?)
 * Add more sources
 * Start filtering the news to show headlines that it thinks I would like
 * Improve the reading interface
