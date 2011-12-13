@@ -18,7 +18,7 @@ $(document).ready(function(){
 				cache: true,
 				success: function(response){
 					var data = $.parseJSON(response);
-					var close = '<a class="close" href="">(close)</a>';
+					var close = '<a class="close" href="#">(close)</a>';
 					var title = '<a href="'+data.url+'">'+data.title+'</a>';
 					$("#pageTitle").html(title);
 					$("#pageTitle").append(close);
