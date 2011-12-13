@@ -37,8 +37,11 @@ body {
 	z-index: 2;
 }
 
+#pageTitle a {
+	text-decoration: none;
+	color: rbga(51, 102, 255, 1);
+}
 #pageTitle a:hover {
-	background-color: #000;
 	color: rbga(51, 102, 255, .5);
 }
 
