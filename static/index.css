@@ -105,6 +105,7 @@ body {
 
 /* Style how the source and pub date looks for each article */
 .article .source, .article .tags {
+	padding: 2px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: lighter;
 	font-size: 10px;
