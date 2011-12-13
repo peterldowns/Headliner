@@ -26,9 +26,9 @@ body {
 	text-decoration: none;
 	text-overflow: ellipsis;
 	text-align: center;
-	white-space: nowrap;
 	letter-spacing: -1px;
 	line-height: 39px;
+	white-space: nowrap;
 	
 	color: #000;
 	background-color: #fff; /* stop scroll-through on iOS */
@@ -38,7 +38,8 @@ body {
 }
 
 #pageTitle a:hover {
-	color: rbga(51, 102, 255, 1);
+	background-color: rgba(51, 102, 255, 0.25);
+	color: #fff;
 }
 
 /* These hold headlines and body text */
