@@ -38,7 +38,8 @@ body {
 }
 
 #pageTitle a:hover {
-	background-color: rgba(51, 102, 255, 0.25);
+	border-radius: 3px;
+	background-color: rgba(51, 102, 255, 0.5);
 	color: #fff;
 }
 
