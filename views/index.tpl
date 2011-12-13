@@ -16,9 +16,7 @@
 				{{article['source']}}
 			</div>
 			{{article['title']}}
-			<div class="tags">
-				{{", ".join(article['tags'])}}
-			</div>
+			<div class="pub_date"></div>
 		</div>
 	%end
 	</div>

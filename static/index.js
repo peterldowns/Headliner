@@ -6,10 +6,8 @@ $(document).ready(function(){
 		var realdate = new Date();
 		realdate.setTime(timestamp);
 		var datestr = realdate.toUTCString();
-		var source = $(obj).find('.source');
-		var oldsource = source.text();
-		var newsource = oldsource+" "+datestr;
-		source.html(newsource);
+		var datediv = $(obj).find('.pub_date');
+		datediv.html(datestr);
 
 		$(obj).click(function(e){
 			$("#content").fadeOut("fast");

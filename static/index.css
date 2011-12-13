@@ -104,19 +104,14 @@ body {
 }
 
 /* Style how the source and pub date looks for each article */
-.article .source, .article .tags {
+.article .source, .article .pub_date {
 	padding: 2px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: lighter;
 	font-size: 10px;
-	line-height: 100%;
 }
 .article .source {
-	line-height: 110%;
 	text-decoration: underline;
-}
-.article .tags {
-	font-style: italic;
 }
 .article:hover {
 	background-color:rgba(256,256,0,.5);
