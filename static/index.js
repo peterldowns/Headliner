@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 		$(obj).click(function(e){
 			$("#content").fadeOut("fast");
-			$("#pageTitle").html("<h1>Loading <img style='display:inline;' src='/static/ajax-loader.gif'/> <h1>").show();
+			$("#text").html("<center><h1>Loading <img style='display:inline;' src='/static/ajax-loader.gif'/><h1></center>").show();
 			var url = $(this).attr('url');
 			$.ajax({
 				url: '/viewtext?url='+url,
