@@ -35,7 +35,7 @@ class index():
 				articles = coll.find()
 		except:
 			articles = [news.createArticle("Error", "Error", "Error", "Error", "Error")]
-		return {"articles" : articles.sort("timestamp", -1).limit(20)}
+		return {"articles" : articles.sort("timestamp", -1).limit(50)}
 	
 	@route('/viewtext', 'GET')
 	def viewtext():
@@ -49,8 +49,7 @@ class index():
 					title, _url, body = news.viewtext(url)
 					out = json.dumps({"title":title, "body":body, "url":url})
 					match['html'] = out
-					#DBarticles.save(match) # can't change size on capped collection - how to fix?
-						# TODO: separate "html" database, with {"url" : "html_value_stuff"} as the schema
+					DBarticles.save(match) # can't change size on capped collection - how to fix?
 				return  out
 		except Exception as e:
 			print >> sys.stderr, e
