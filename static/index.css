@@ -112,6 +112,7 @@ body {
 	line-height: 100%;
 }
 .article .source {
+	line-height: 110%;
 	text-decoration: underline;
 }
 .article .tags {
