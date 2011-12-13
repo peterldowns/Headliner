@@ -137,12 +137,12 @@ body {
 }
 a {
 	border-radius: 3px;
+	border: 1px dashed #6090CF;
+	color: #6090CF;
 	text-decoration: none;
-	padding: 2px;
 	margin-left: 3px;
 	margin-right: 3px;
-	color: #FFF;
-	background-color: #6090CF;
+	padding: 2px;
 }
 
 img {
