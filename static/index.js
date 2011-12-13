@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 		$(obj).click(function(e){
 			$("#content").fadeOut("fast");
-			$("#text").html("<h1>Loading</h1><img src='/static/ajax-loader.gif'/>").show();
+			$("#pageTitle").html("<h1>Loading <img style='display:inline;' src='/static/ajax-loader.gif'/> <h1>").show();
 			var url = $(this).attr('url');
 			$.ajax({
 				url: '/viewtext?url='+url,
@@ -22,7 +22,7 @@ $(document).ready(function(){
 					var title = '<a href="'+data.url+'">'+data.title+'</a>';
 					$("#pageTitle").html(close);
 					$("#pageTitle").append(title);
-					$("#text").html(close+data.body+close).fadeIn("fast");
+					$("#text").html(data.body).fadeIn("fast");
 				},
 				error: function(response){
 					console.log("There was an error with the request");
