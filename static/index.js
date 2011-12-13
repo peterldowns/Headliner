@@ -3,17 +3,12 @@ $(document).ready(function(){
 	$("#text").hide(); // don't show any one article in particular
 	$(".article").each(function(index, obj){
 		var timestamp = $(obj).attr('ts');
-		console.log("timestamp:", timestamp);
 		var realdate = new Date();
 		realdate.setTime(timestamp);
-		console.log("realdate:", realdate);
 		var datestr = realdate.toUTCString();
-		console.log("datestr:", datestr);
 		var source = $(obj).find('.source');
 		var oldsource = source.text();
-		console.log("oldsource:", oldsource);
 		var newsource = oldsource+" "+datestr;
-		console.log("newsource:", newsource);
 		source.html(newsource);
 
 		$(obj).click(function(e){
