@@ -39,14 +39,9 @@ body {
 
 #pageTitle a {
 	text-decoration: none;
-	background-color: inherit;
-	color: inherit;
 }
 #pageTitle a:hover {
 	color: rbga(51, 102, 255, 1);
-}
-#pageTitle .close a {
-	color: red;
 }
 
 /* These hold headlines and body text */
@@ -116,7 +111,7 @@ body {
 	text-decoration: underline;
 }
 .article:hover {
-	background-color:rgba(51, 102, 255, 0.5);
+	background-color:rgba(51, 102, 255, 0.25);
 	color: #000;
 }
 
@@ -137,7 +132,7 @@ body {
 
 a {
 	border-radius: 3px;
-	color: rgba(51, 102, 255, .5);
+	color: rgba(51, 102, 255, 1);
 	text-decoration: none;
 	margin-left: 3px;
 	margin-right: 3px;
