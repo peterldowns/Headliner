@@ -37,12 +37,8 @@ body {
 	z-index: 2;
 }
 
-#pageTitle a {
-	text-decoration: none;
-	color: rbga(51, 102, 255, 1);
-}
 #pageTitle a:hover {
-	color: rbga(51, 102, 255, .5);
+	color: rbga(51, 102, 255, 1);
 }
 
 /* These hold headlines and body text */
@@ -143,7 +139,8 @@ img {
 }
 
 .close {
-	margin-right: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
 	float: left;
 	text-align: left;
 }
