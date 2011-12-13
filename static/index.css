@@ -31,6 +31,7 @@ body {
 	line-height: 39px;
 	
 	color: #000;
+	background-color: #fff; /* stop scroll-through on iOS */
 	
 	overflow: hidden;
 	z-index: 2;
@@ -42,7 +43,10 @@ body {
 	color: inherit;
 }
 #pageTitle a:hover {
-	color: #6090CF;
+	color: rbga(51, 102, 255, 1);
+}
+#pageTitle .close a {
+	color: red;
 }
 
 /* These hold headlines and body text */
@@ -112,7 +116,7 @@ body {
 	text-decoration: underline;
 }
 .article:hover {
-	background-color:rgba(256,256,0,.5);
+	background-color:rgba(51, 102, 255, 0.5);
 	color: #000;
 }
 
@@ -131,13 +135,9 @@ body {
 	
 }
 
-a .close {
-	font-size: 10px;
-	color: red;
-}
 a {
 	border-radius: 3px;
-	color: #6090CF;
+	color: rgba(51, 102, 255, .5);
 	text-decoration: none;
 	margin-left: 3px;
 	margin-right: 3px;
