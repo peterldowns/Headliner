@@ -141,3 +141,9 @@ img {
 	height: auto;
 	width: auto;
 }
+
+.close {
+	margin-right: 20px;
+	float: left;
+	text-align: left;
+}
