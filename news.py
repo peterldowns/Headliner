@@ -60,7 +60,6 @@ def viewtext(url):
 	
 def createArticle(url, source, pub_date, tags, title=None):
 	tx = time.time()*1000
-	print tx
 	return {
 		"source" : source,
 		"url" : url,
