@@ -31,7 +31,6 @@ class index():
 				params = {"$or" : can_have}
 				articles = coll.find(params)
 			else:
-				print "finding latest articles"
 				articles = coll.find()
 		except:
 			articles = [news.createArticle("Error", "Error", "Error", "Error", "Error")]
@@ -45,6 +44,7 @@ class index():
 			match = DBarticles.find_one({"url":url})
 			if match:
 				out = match['html']
+				print "Cache-hit => %s" % url
 				if not out:
 					title, _url, body = news.viewtext(url)
 					out = json.dumps({"title":title, "body":body, "url":url})
