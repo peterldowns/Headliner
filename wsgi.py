@@ -46,6 +46,7 @@ class index():
 				out = match['html']
 				print "Cache-hit => %s" % url
 				if not out:
+					print "\tNope, refetching"
 					title, _, body = news.viewtext(url)
 					out = json.dumps({"title":match['title'], "body":body, "url":url})
 					match['html'] = out
