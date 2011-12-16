@@ -46,8 +46,8 @@ class index():
 				out = match['html']
 				print "Cache-hit => %s" % url
 				if not out:
-					title, _url, body = news.viewtext(url)
-					out = json.dumps({"title":title, "body":body, "url":url})
+					title, _, body = news.viewtext(url)
+					out = json.dumps({"title":match['title'], "body":body, "url":url})
 					match['html'] = out
 					DBarticles.save(match) # can't change size on capped collection - how to fix?
 				return  out
