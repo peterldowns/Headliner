@@ -24,16 +24,16 @@ def main():
 			for src in source_fns:
 				try:
 					new_articles.extend(src())
-				except Exception as e: pass
+				except Exception as e:
+					print "Error with source",src
+					print "\t", e
 			
 			coll = getCollection("news", "articles", creds)
 			print "number of old articles: %d" % coll.count()
-			DB_articles = coll.find()
 			
 			added = 0
-			_urls = map(lambda x: x['url'], DB_articles)
 			for a in new_articles:
-				if not a['url'] in _urls:
+				if not coll.find_one({"url":a['url']}):
 					coll.insert(a)
 					added += 1
 			print "Added %d new articles" % added
