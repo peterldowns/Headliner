@@ -146,32 +146,32 @@ def NPR_news():
 def AP_topNews():
 	""" Fetches all AP news in given categories """
 	categories = [
-		31990, # Top General Short Headlines
-		31991, # Top International Short Headlines
-		31992, # Top Technology Short Headlines
-		31993, # Top Sports Short Headlines
-		31994, # Top Business Short Headlines
-		31995, # General Financial/Business News
-		31998, # National News
-		32005, # High Tech News
-		32502, # Europe News
-		32503, # Africa News
-		32505, # Middle East News
-		32506, # Feature Stories
-		32516, # President, White House, Advisers News
-		32518, # Congress News
-		32519, # Supreme Court news
-		32520, # Other U.S. Government News
-		32526, # Personal Finance, Investing and Consumer News
-		32530, # Wall Street Stock reports
-		32539, # Science News
-		32573, # Top Political Short Headlines
+		#31990, # Top General Short Headlines
+		#31991, # Top International Short Headlines
+		#31992, # Top Technology Short Headlines
+		#31993, # Top Sports Short Headlines
+		#31994, # Top Business Short Headlines
+		#31995, # General Financial/Business News
+		#31998, # National News
+		#32005, # High Tech News
+		#32502, # Europe News
+		#32503, # Africa News
+		#32505, # Middle East News
+		#32506, # Feature Stories
+		#32516, # President, White House, Advisers News
+		#32518, # Congress News
+		#32519, # Supreme Court news
+		#32520, # Other U.S. Government News
+		#32526, # Personal Finance, Investing and Consumer News
+		#32530, # Wall Street Stock reports
+		#32539, # Science News
+		#32573, # Top Political Short Headlines
 		41664, # Top News
 	]
 	articles = []
 	for c in categories:
 		try:
-			time.sleep(2) # rate limiting protection
+			#time.sleep(3) # rate limiting protection
 			articles.extend(AP_news(c))
 		except Exception as e:
 			print "Failed to fetch AP %d" % c
@@ -199,7 +199,7 @@ def AP_news(category):
 	count = 5
 	APkey = AP_keys["breaking-news"]
 	#category = 41664 # AP Online Top General Short Headlines
-	contentOption = 0
+	contentOption = 1
 	base = "http://developerapi.ap.org/v2/categories.svc/%d/?contentOption=%d&count=%d"\
 		"&mediaOption=0&apiKey=%s"
 	reqstr = base % (category, contentOption, count, APkey)
