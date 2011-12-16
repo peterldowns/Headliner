@@ -5,6 +5,16 @@ import BeautifulSoup, re # html cleaning
 import time # delay AP requests, make timestamps
 
 
+def html_escape(s):
+	out = s
+	try:
+		out = s.decode('utf-8').encode('ascii', 'xmlcharrefreplace')
+	except Exception as e:
+		print "html_escape error:"
+		print "\tinput = %s" % s
+		print "\terror =", e
+	return out
+
 def cleanText(text):
 	""" Cleans text """
 	out = re.sub(r'[\t]+', '&nbsp;'*4, text)
@@ -48,9 +58,10 @@ def diffbot(url):
 
 def viewtext(url):
 	""" Use viewtext.org's API to extract the HTML from an article """
-	viewtext = "http://viewtext.org/api/text?url=%s&format=%s"
+	viewtext = "http://viewtext.org/api/text?url=%s&format=%s&rl=%s"
+	redirect_links = "false"
 	form = "json"
-	req_string = viewtext % (urllib.quote(url), form)
+	req_string = viewtext % (urllib.quote(url), form, redirect_links)
 	resp = requests.get(req_string)
 	data = json.loads(resp.content)
 	
@@ -61,14 +72,14 @@ def viewtext(url):
 def createArticle(url, source, pub_date, tags, title=None):
 	tx = time.time()*1000
 	return {
-		"source" : source,
+		"source" : html_escape(source),
 		"url" : url,
 		"pub_date" : pub_date,
 		"timestamp" : tx, # timestamp in ms since epoch, for JS compatibility
-		"tags" : tags,
-		"title" : title,
+		"tags" : map(html_escape, map(str.lower, tags)), # lower case them
+		"title" : html_escape(title),
 		"html" : None,
-		"value" : None }
+		"value" : 0 }
 
 NYT_keys = {
 	"most-popular" : "32a8ad498501475cb0fa4abbc04f4e4e:5:61481359",
@@ -113,7 +124,7 @@ def NPR_get_articles(jresp):
 		tags.extend(story['teaser']['$text'].split(' '))
 		
 		# make the article
-		a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		a = createArticle(url, source, pub_date, tags, title)
 		
 		articles.append(a)
 	
@@ -179,7 +190,7 @@ def TNY_news():
 		source = "The New Yorker"
 		pub_date = item.pubdate.string
 		tags = str(item.description.string).split('&#160;.')[0].split(' ')
-		a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		a = createArticle(url, source, pub_date, tags, title)
 		articles.append(a)
 	return articles
 		
@@ -205,8 +216,7 @@ def AP_news(category):
 		
 		tags = []
 		tags.extend([str(cat['label']) for cat in entry.findAll('category')])
-		
-		a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		a = createArticle(url, source, pub_date, tags, title)
 		if contentOption == 2: # if we get the source text with it, may as well use it
 			entry_content = entry.findAll(attrs={"class":"entry-content"})[0].contents
 			a.html = "".join(map(str, entry_content))
@@ -250,7 +260,7 @@ def NYT_get_articles(jresp):
 		except TypeError as te:
 			pass
 		
-		a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+		a = createArticle(url, source, pub_date, tags, title)
 		articles.append(a)
 	return articles
 
@@ -289,7 +299,7 @@ def HN_frontPage():
 			title = link['title']
 			pub_date = link['postedAgo']
 			tags = title.split(' ') # lack of tags :(
-			a = createArticle(url, source, pub_date, map(lambda x: x.encode('ascii', "xmlcharrefreplace").lower(), tags), title)
+			a = createArticle(url, source, pub_date, tags, title)
 			articles.append(a)
 		except: pass
 	return articles
