@@ -20,7 +20,7 @@ def main():
 		out = []
 		try:
 			new_articles = []
-			source_fns = [news.NYT_recent, news.NPR_news, news.HN_frontPage, news.TNY_news, news.NYT_mostPopular]
+			source_fns = [news.NYT_recent, news.NPR_news, news.HN_frontPage, news.TNY_news, news.NYT_mostPopular, news.AP_topNews]
 			for src in source_fns:
 				try:
 					new_articles.extend(src())
