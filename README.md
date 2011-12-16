@@ -25,7 +25,13 @@ otherwise, viewtext.com's API is called instead.
 
 ##Todo:##
 
-
+* Add twitter bootstrap for the toolbar. It will be cleaner and better.
+	* Allows filtering of different sources
+	* Allows login/logout/user settings
+	* More consistent, logical layout of titles and stuff (currently hack-y)
+* Fetch the main page with AJAX
+	* Would allow for infinite scrolling in the future.
+	* Allows reload of the main page after changing source filters.
 * Unicode encoding
 	* see http://farmdev.com/talks/unicode/
 * Standardized colors
