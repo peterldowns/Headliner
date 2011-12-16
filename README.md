@@ -25,6 +25,8 @@ otherwise, viewtext.com's API is called instead.
 
 ##Todo:##
 
+* When checking to see if an article already exists in the database, don't do a db.find().
+	* Test to see if db.findOne({"url":url}) exists instead, it should be a hell of a lot faster.
 * Add twitter bootstrap for the toolbar. It will be cleaner and better.
 	* Allows filtering of different sources
 	* Allows login/logout/user settings
