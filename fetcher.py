@@ -43,7 +43,7 @@ def main():
 		except Exception as e:
 			print "Failed to save to database, see stderr logs"
 			print >> sys.stderr, "Exception:", e
-		time.sleep(300) # repeat this command ever 3 minutes
+		time.sleep(120) # repeat this command ever 3 minutes
 
 # Bind our callback to the SIGTERM signal and run the daemon
 signal.signal(signal.SIGTERM, sigterm_handler)
