@@ -33,7 +33,10 @@ def main():
 			
 			added = 0
 			for a in new_articles:
-				if not coll.find_one({"url":a['url']}):
+				print "a.url = %s" % a['url']
+				x = coll.find_one({"url":a['url']})
+				print "coll search:", x
+				if not x:
 					coll.insert(a)
 					added += 1
 			print "Added %d new articles" % added
