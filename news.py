@@ -13,6 +13,7 @@ def html_escape(s):
 		print "html_escape error:"
 		print "\tinput = %s" % s
 		print "\terror =", e
+		pass
 	return out
 
 def cleanText(text):
@@ -76,7 +77,7 @@ def createArticle(url, source, pub_date, tags, title=None):
 		"url" : url,
 		"pub_date" : pub_date,
 		"timestamp" : tx, # timestamp in ms since epoch, for JS compatibility
-		"tags" : map(html_escape, map(str.lower, tags)), # lower case them
+		"tags" : map(unicode.lower, map(html_escape, tags)), # lower case them
 		"title" : html_escape(title),
 		"html" : None,
 		"value" : 0 }
