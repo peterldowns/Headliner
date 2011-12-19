@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var timestamp = $(obj).attr('ts');
 		var realdate = new Date();
 		realdate.setTime(timestamp);
-		var datestr = realdate.toUTCString();
+		var datestr = realdate.toLocaleString();
 		var datediv = $(obj).find('.pub_date');
 		datediv.html(datestr);
 
