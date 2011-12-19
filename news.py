@@ -10,7 +10,7 @@ import sys, traceback
 def html_escape(s):
 	out = s
 	try:
-		out = s.decode('utf-8').encode('ascii', 'xmlcharrefreplace')
+		out = s.encode('ascii', 'xmlcharrefreplace')
 	except Exception as e:
 		print "html_escape error:",s,e
 		exc_type, exc_value, exc_traceback = sys.exc_info()
