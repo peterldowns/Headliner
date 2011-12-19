@@ -35,8 +35,10 @@ def main():
 			for a in new_articles:
 				print "a.url = %s" % a['url']
 				x = coll.find_one({"url":a['url']})
-				print "coll search:", x
+				if x:
+					print "\t already exists: %d" % x['timestamp']
 				if not x:
+					print "\t Added to DB"
 					coll.insert(a)
 					added += 1
 			print "Added %d new articles" % added
