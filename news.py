@@ -71,16 +71,18 @@ def viewtext(url):
 	return (title, url, content)
 	
 def createArticle(url, source, pub_date, tags, title=None):
-	tx = time.time()*1000
-	return {
+	try:
+		return {
 		"source" : html_escape(source),
 		"url" : url,
 		"pub_date" : pub_date,
-		"timestamp" : tx, # timestamp in ms since epoch, for JS compatibility
+		"timestamp" : time.time()*1000, # timestamp in ms since epoch, for JS compatibility
 		"tags" : map(unicode.lower, map(html_escape, tags)), # lower case them
 		"title" : html_escape(title),
 		"html" : None,
 		"value" : 0 }
+	except Exception as e:
+		print e
 
 NYT_keys = {
 	"most-popular" : "32a8ad498501475cb0fa4abbc04f4e4e:5:61481359",
