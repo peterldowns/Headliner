@@ -9,6 +9,7 @@ def html_escape(s):
 	out = s
 	try:
 		out = s.decode('utf-8').encode('ascii', 'xmlcharrefreplace')
+		out = unicode(out)
 	except Exception as e:
 		print "html_escape error:"
 		print "\tinput = %s" % s
