@@ -48,7 +48,11 @@ class index():
 				if not out:
 					print "\tNope, refetching"
 					title, _, body = news.viewtext(url)
-					body = news.html_escape(body) # clean up the body?
+					try:
+						body = news.html_escape(body) # clean up the body?
+					except Exception as e:
+						print "!!! Could not HTML escape the body of text"
+						print e
 					out = json.dumps({"title":match['title'], "body":body, "url":url})
 					match['html'] = out
 					DBarticles.save(match) # can't change size on capped collection - how to fix?
