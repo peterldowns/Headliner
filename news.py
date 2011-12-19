@@ -4,15 +4,22 @@ import json # parse result
 import BeautifulSoup, re # html cleaning
 import time # delay AP requests, make timestamps
 
+# debugging
+import sys, traceback
 
 def html_escape(s):
 	out = s
 	try:
 		out = s.decode('utf-8').encode('ascii', 'xmlcharrefreplace')
 	except Exception as e:
-		print "html_escape error:"
-		print "\tinput = %s" % s
-		print "\terror =", e
+		print "html_escape error:",s,e
+		exc_type, exc_value, exc_traceback = sys.exc_info()
+		print "*** print_tb:"
+		traceback.print_tb(exc_traceback, limit=1, file=sys.stdout)
+		print "*** print_exception:"
+		traceback.print_exception(exc_type, exc_value, exc_traceback,limit=2, file=sys.stdout)
+		print "*** print_exc:"
+		traceback.print_exc()
 	return unicode(out)
 
 def cleanText(text):
