@@ -8,7 +8,7 @@ import time # delay AP requests, make timestamps
 def html_escape(s):
 	out = s
 	try:
-		out = s.encode('ascii', 'xmlcharrefreplace')
+		out = s.decode('utf-8').encode('ascii', 'xmlcharrefreplace')
 	except Exception as e:
 		print "html_escape error:"
 		print "\tinput = %s" % s
