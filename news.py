@@ -10,6 +10,10 @@ import sys, traceback
 def html_escape(s):
 	out = s
 	try:
+		out = out.decode('utf-8')
+	except UnicodeEncodeError as e:
+		print "Error:", e, "BUT IT's OK!"
+	try:
 		out = s.encode('ascii', 'xmlcharrefreplace')
 	except Exception as e:
 		print "html_escape error:",s,e
