@@ -8,14 +8,12 @@ import time # delay AP requests, make timestamps
 def html_escape(s):
 	out = s
 	try:
-		out = s.decode('utf-8').encode('ascii', 'xmlcharrefreplace')
-		out = unicode(out)
+		out = s.encode('ascii', 'xmlcharrefreplace')
 	except Exception as e:
 		print "html_escape error:"
 		print "\tinput = %s" % s
 		print "\terror =", e
-		pass
-	return out
+	return unicode(out)
 
 def cleanText(text):
 	""" Cleans text """
@@ -83,7 +81,8 @@ def createArticle(url, source, pub_date, tags, title=None):
 		"html" : None,
 		"value" : 0 }
 	except Exception as e:
-		print e
+		print "Error in article creation:"
+		print "\t",e
 
 NYT_keys = {
 	"most-popular" : "32a8ad498501475cb0fa4abbc04f4e4e:5:61481359",
