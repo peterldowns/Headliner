@@ -15,7 +15,7 @@
 			<div class="source">
 				{{article['source']}}
 			</div>
-			<p>{{article['title']}}</p>
+			<p>{{!article['title']}}</p>
 			<div class="pub_date"></div>
 		</div>
 	%end
