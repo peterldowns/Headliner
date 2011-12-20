@@ -20,6 +20,7 @@ $(document).ready(function(){
 					var data = $.parseJSON(response);
 					var close = '<a class="close" href="">(close)</a>';
 					var title = '<a href="'+data.url+'">'+data.title+'</a>';
+					console.log(data.title)
 					$("#pageTitle").html(close);
 					$("#pageTitle").append(title);
 					$("#text").html(data.body).fadeIn("fast");
