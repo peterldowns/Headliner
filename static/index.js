@@ -1,3 +1,11 @@
+var closeInit = function(){
+	console.log("Running closeInit");
+	$("#close").click(function(){
+		$("#text").hide().html("");
+		$("#pageTitle").text("Headliner - The Daily News");
+		$("#content").fadeIn("fast");
+	});
+}
 $(document).ready(function(){
 	var close = '<div id="close">(close)</a>';
 	$("#content").show(); // show the articles
@@ -33,13 +41,7 @@ $(document).ready(function(){
 					$("#pageTitle").html("<h3>There was an error with the request");
 					$("#text").html('<center><a class="close" href="">Click here to return to the homepage</a>');
 				},
-				complete: function(){
-					$("#close").click(function(){
-						$("#text").hide().html("");
-						$("#pageTitle").text("Headliner - The Daily News");
-						$("#content").fadeIn("fast");
-					});
-				},
+				complete: closeInit,
 			});
 			return false;
 		});
