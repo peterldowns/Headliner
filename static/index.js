@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	var close = '<div id="close">(close)</a>';
 	$("#content").show(); // show the articles
 	$("#text").hide(); // don't show any one article in particular
 	$(".article").each(function(index, obj){
@@ -11,6 +12,7 @@ $(document).ready(function(){
 
 		$(obj).click(function(e){
 			$("#content").fadeOut("fast");
+			$("#pageTitle").html(close);
 			$("#text").html("<center><h1>Loading <img style='display:inline;' src='/static/ajax-loader.gif'/><h1></center>").show();
 			var url = $(this).attr('url');
 			$.ajax({
@@ -18,7 +20,6 @@ $(document).ready(function(){
 				cache: true,
 				success: function(response){
 					var data = $.parseJSON(response);
-					var close = '<div id="close">(close)</a>';
 					var title = '<a href="'+data.url+'">'+data.title+'</a>';
 					console.log(data.title)
 					$("#pageTitle").html(close);
