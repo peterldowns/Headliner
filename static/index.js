@@ -35,7 +35,7 @@ $(document).ready(function(){
 				complete: function(){
 					$("#close").click(function(){
 						$("#text").hide().html("");
-						$("#pageTitle").html("<h1>Headliner - The Daily News</h1>");
+						$("#pageTitle").text("Headliner - The Daily News");
 						$("#content").fadeIn("fast");
 					});
 				},
