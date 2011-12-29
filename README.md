@@ -24,7 +24,9 @@ get the article text. If the text has been gotten before, the cached result is r
 otherwise, viewtext.com's API is called instead.
 
 ##Todo:##
-
+* Maintain history/state with [history.js](https://github.com/balupton/History.js)
+	* For this to work, there should be an "article/title_slug_or_id" AJAX point?
+	* Basically, there needs to be a way to link to an individual article
 * When checking to see if an article already exists in the database, don't do a db.find().
 	* Test to see if db.findOne({"url":url}) exists instead, it should be a hell of a lot faster.
 * Add twitter bootstrap for the toolbar. It will be cleaner and better.
