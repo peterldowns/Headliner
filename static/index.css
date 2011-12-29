@@ -139,7 +139,7 @@ img {
 	width: auto;
 }
 
-.close {
+#close {
 	margin-left: 10px;
 	margin-right: 10px;
 	float: left;

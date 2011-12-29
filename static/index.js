@@ -18,7 +18,7 @@ $(document).ready(function(){
 				cache: true,
 				success: function(response){
 					var data = $.parseJSON(response);
-					var close = '<a class="close" href="">(close)</a>';
+					var close = '<div id="close">(close)</a>';
 					var title = '<a href="'+data.url+'">'+data.title+'</a>';
 					console.log(data.title)
 					$("#pageTitle").html(close);
@@ -33,12 +33,10 @@ $(document).ready(function(){
 					$("#text").html('<center><a class="close" href="">Click here to return to the homepage</a>');
 				},
 				complete: function(){
-					$(".close").each(function(index, obj){
-						$(obj).click(function(){
-							$("#text").hide().html("");
-							$("#pageTitle").html("<h1>Headliner - The Daily News</h1>");
-							$("#content").fadeIn("fast");
-						});
+					$("#close").click(function(){
+						$("#text").hide().html("");
+						$("#pageTitle").html("<h1>Headliner - The Daily News</h1>");
+						$("#content").fadeIn("fast");
 					});
 				},
 			});
