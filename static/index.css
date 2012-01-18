@@ -10,28 +10,6 @@ body {
 	overflow-x: auto;
 	overflow-y: hidden;
 }
-@media handheld, only screen and (max-width: 500px){
-	body {
-		overflow-x: hidden;
-		overflow-y: scroll;
-	}
-	#content, #text {
-		position: static;
-	}
-	.columns {	
-		-webkit-column-count: 1;
-		-moz-column-count: 1;
-		column-count: 1;
-
-		-webkit-column-width: auto;
-		-moz-column-width: auto;
-		column-width: auto;
-
-		-webkit-column-gap:10px;
-		-moz-column-gap:10px;
-		column-gap: 10px;
-	}
-}
 
 #pageTitle {
 	position: fixed;
@@ -166,4 +144,27 @@ img {
 	margin-right: 10px;
 	float: left;
 	text-align: left;
+}
+
+@media all, only screen and (max-width: 800px){
+	body {
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+	#content, #text {
+		position: static;
+	}
+	.columns {	
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+
+		-webkit-column-width: auto;
+		-moz-column-width: auto;
+		column-width: auto;
+
+		-webkit-column-gap:10px;
+		-moz-column-gap:10px;
+		column-gap: 10px;
+	}
 }
