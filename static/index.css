@@ -146,7 +146,7 @@ img {
 	text-align: left;
 }
 
-@media all, only screen and (max-width: 800px){
+@media handheld, only screen and (max-width: 800px){
 	body {
 		overflow-x: hidden;
 		overflow-y: scroll;
