@@ -10,6 +10,25 @@ body {
 	overflow-x: auto;
 	overflow-y: hidden;
 }
+@media handheld, only screen and (max-width: 500px){
+	body {
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	.columns {	
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	
+		-webkit-column-width: auto;
+		-moz-column-width: auto;
+		column-width: auto;
+
+		-webkit-column-gap:0px;
+		-moz-column-gap:0px;
+		column-gap: 0px;
+	}
+}
 
 #pageTitle {
 	position: fixed;
