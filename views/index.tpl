@@ -4,6 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="/static/index.css" />
 	<script type="text/javascript" src="static/jquery.js"></script>
 	<script type="text/javascript" src="static/index.js"></script>
+	<meta name="viewport" content="width=device-width">
 </head>
 
 <body>
