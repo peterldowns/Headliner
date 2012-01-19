@@ -147,6 +147,9 @@ img {
 }
 
 @media handheld, only screen and (max-width: 768px){
+	html {
+		font-size: 62.5%;
+	}
 	body {
 		overflow-x: hidden;
 		overflow-y: scroll;
