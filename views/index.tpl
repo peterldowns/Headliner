@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<div id="pageTitle">Headliner - The Daily News</div>
+	<div id="pageTitle"><a href="/" style="color:#000; text-decoration: none;"> Headliner - The Daily News </a></div>
 	
 	<div id="content" class="columns">
 	%for article in articles:
