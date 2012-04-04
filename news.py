@@ -14,7 +14,7 @@ def html_escape(s):
 	except UnicodeEncodeError as e:
 		print "Error:", e, "BUT IT's OK!"
 	try:
-		out = s.encode('ascii', 'xmlcharrefreplace')
+		out = out.encode('ascii', 'xmlcharrefreplace')
 	except Exception as e:
 		print "html_escape error:",s,e
 	return unicode(out)
