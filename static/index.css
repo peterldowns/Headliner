@@ -2,8 +2,8 @@ html {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
 				 "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
 				 sans-serif;
-	font-color: #000;
-	background-color: #fff;
+	font-color: #222;
+	background-color: #FCFBF3;
 }
 
 body {
@@ -30,8 +30,8 @@ body {
 	line-height: 39px;
 	white-space: nowrap;
 	
-	color: #000;
-	background-color: #fff; /* stop scroll-through on iOS */
+	color: #222;
+	background-color: #FCFBF3; /* stop scroll-through on iOS */
 	
 	overflow: hidden;
 	z-index: 2;
@@ -39,7 +39,7 @@ body {
 
 #pageTitle a:hover {
 	background-color: rgba(51, 102, 255, 0.5);
-	color: #fff;
+	color: #FCFBF3;
 }
 
 /* These hold headlines and body text */
@@ -68,7 +68,7 @@ body {
 }
 
 #text {
-	color: #000;
+	color: #222;
 	font-size: 20px;
 	line-height: 140%; /* better readability */
 	font-family: Times, "Times New Roman", "times-roman", Georgia, serif;
@@ -97,18 +97,18 @@ body {
 }
 
 /* Style how the source and pub date looks for each article */
-.article .source, .article .pub_date {
+.article .source, .article .pub_date, .article .link {
 	padding: 2px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: lighter;
 	font-size: 10px;
 }
-.article .source {
+.article .source, .article .link:hover {
 	text-decoration: underline;
 }
 .article:hover {
 	background-color:rgba(51, 102, 255, 0.25);
-	color: #000;
+	color: #222;
 }
 
 .columns {	
