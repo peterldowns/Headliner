@@ -164,7 +164,7 @@ def AP_topNews():
 		#32502, # Europe News
 		#32503, # Africa News
 		#32505, # Middle East News
-		#32506, # Feature Stories
+		32506, # Feature Stories
 		#32516, # President, White House, Advisers News
 		#32518, # Congress News
 		#32519, # Supreme Court news
@@ -172,7 +172,7 @@ def AP_topNews():
 		#32526, # Personal Finance, Investing and Consumer News
 		#32530, # Wall Street Stock reports
 		#32539, # Science News
-		#32573, # Top Political Short Headlines
+		32573, # Top Political Short Headlines
 		41664, # Top News
 	]
 	articles = []
@@ -310,3 +310,4 @@ def HN_frontPage():
 			articles.append(a)
 		except: pass
 	return articles
+

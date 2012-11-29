@@ -52,3 +52,4 @@ def main():
 # Bind our callback to the SIGTERM signal and run the daemon
 signal.signal(signal.SIGTERM, sigterm_handler)
 main()
+
