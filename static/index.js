@@ -27,7 +27,7 @@ $(document).ready(function(){
 			$("#pageTitle").html(close);
 			closeInit();
 			$("#text").html("<center><h1>Loading <img style='display:inline;' src='/static/ajax-loader.gif'/><h1></center>").show();
-			var url = $(this).attr('url');
+			var url = $(this).parent().attr('url');
 			CURRENT_REQ = $.ajax({
 				url: '/viewtext?url='+url,
 				cache: true,
