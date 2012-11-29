@@ -1,6 +1,10 @@
+var CURRENT_REQ;
 var closeInit = function(){
-	console.log("Running closeInit");
 	$("#close").click(function(){
+    if (CURRENT_REQ) {
+      console.log('aborted!');
+      CURRENT_REQ.abort();
+    }
 		$("#text").hide().html("");
 		$("#pageTitle").text("Headliner - The Daily News");
 		$("#content").fadeIn("fast");
@@ -24,13 +28,12 @@ $(document).ready(function(){
 			closeInit();
 			$("#text").html("<center><h1>Loading <img style='display:inline;' src='/static/ajax-loader.gif'/><h1></center>").show();
 			var url = $(this).attr('url');
-			$.ajax({
+			CURRENT_REQ = $.ajax({
 				url: '/viewtext?url='+url,
 				cache: true,
 				success: function(response){
 					var data = $.parseJSON(response);
 					var title = '<a href="'+data.url+'">'+data.title+'</a>';
-					console.log(data.title)
 					$("#pageTitle").html(close);
 					$("#pageTitle").append(title);
 					$("#text").html(data.body).fadeIn("fast");
