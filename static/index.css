@@ -3,7 +3,7 @@ html {
 				 "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
 				 sans-serif;
 	font-color: #222;
-	background-color: #FCFBF3;
+	background-color: #FFF;
 }
 
 body {
@@ -31,7 +31,7 @@ body {
 	white-space: nowrap;
 	
 	color: #222;
-	background-color: #FCFBF3; /* stop scroll-through on iOS */
+	background-color: #FFF; /* stop scroll-through on iOS */
 	
 	overflow: hidden;
 	z-index: 2;
@@ -39,7 +39,7 @@ body {
 
 #pageTitle a:hover {
 	background-color: rgba(51, 102, 255, 0.5);
-	color: #FCFBF3;
+	color: #FFF;
 }
 
 /* These hold headlines and body text */
