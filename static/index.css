@@ -97,6 +97,9 @@ body {
 }
 
 /* Style how the source and pub date looks for each article */
+.article .link: {
+  color: #222;
+}
 .article .source, .article .pub_date, .article .link {
 	padding: 2px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
