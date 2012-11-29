@@ -38,7 +38,6 @@ body {
 }
 
 #pageTitle a:hover {
-	border-radius: 3px;
 	background-color: rgba(51, 102, 255, 0.5);
 	color: #fff;
 }
@@ -83,7 +82,6 @@ body {
 
 /* Every article is kept inside a .article div. */
 .article {
-	border-radius: 5px;
 	padding: 5px;
 	margin: 5px;
 	
