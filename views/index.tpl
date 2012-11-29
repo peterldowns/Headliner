@@ -13,11 +13,13 @@
 	<div id="content" class="columns">
 	%for article in articles:
 		<div class="article" url="{{article['url']}}" ts="{{article['timestamp']}}" tags="{{", ".join(article['tags'])}}">
-			<div class="source">
-				{{article['source']}}
-			</div>
-			<p>{{!article['title']}}</p>
-			<div class="pub_date"></div>
+      <div class="clickable">
+        <div class="source">
+          {{article['source']}}
+        </div>
+        <p>{{!article['title']}}</p>
+        <div class="pub_date"></div>
+      </div>
       <a class="link" href="{{article['url']"> link </a>
 		</div>
 	%end
