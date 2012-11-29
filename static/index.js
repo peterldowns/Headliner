@@ -22,7 +22,7 @@ $(document).ready(function(){
 		var datediv = $(obj).find('.pub_date');
 		datediv.html(datestr);
 
-		$(obj.children(".clickable").click(function(e){
+		$(obj.children(".clickable")).click(function(e){
 			$("#content").fadeOut("fast");
 			$("#pageTitle").html(close);
 			closeInit();
