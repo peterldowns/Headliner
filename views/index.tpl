@@ -18,6 +18,7 @@
 			</div>
 			<p>{{!article['title']}}</p>
 			<div class="pub_date"></div>
+      <a class="link" href="{{article['url']"> link </a>
 		</div>
 	%end
 	</div>
